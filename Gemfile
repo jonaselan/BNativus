@@ -32,12 +32,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 
+group :test do
+  gem 'database_cleaner'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails'
-  gem 'database_cleaner'
   # generates names, email addresses, and other placeholders for factories.
   gem 'faker'
 end
