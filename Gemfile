@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
+gem 'cancancan', '~> 2.0'
 
 group :test do
   gem 'database_cleaner'
