@@ -14,11 +14,10 @@
   <div class="field">
     <%= form.label :language %>
     <%= form.select(:language_id) do %>
-      <% @languages.each do |l| -%>
-        <%= content_tag(:option, l[0], value: l[1]) %>
+      <% @languages.each do |lang| -%>
+        <%= content_tag(:option, lang[0], value: lang[1]) %>
       <% end %>
     <% end %>
-
   </div>
 
   <div class="field">
@@ -28,7 +27,11 @@
 
   <div class="field">
     <%= form.label :level %>
-    <%= form.text_field :level %>
+    <%= form.select(:level) do %>
+      <% select_levels.each do |level| -%>
+        <%= content_tag(:option, level[0], value: level[1]) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="actions">

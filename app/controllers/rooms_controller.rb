@@ -1,17 +1,14 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_room, only: [:edit, :update, :destroy]
+  before_action :set_languages, only: [:new, :edit]
   before_action :authenticate_user!
 
   def index
     @rooms = Room.all
   end
 
-  def show
-  end
-
   def new
     @room = Room.new
-    @languages = Language.pluck(:name, :id)
   end
 
   def edit
@@ -24,7 +21,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Room was successfully created.' }
       else
         format.html { render :new }
       end
@@ -34,7 +31,7 @@ class RoomsController < ApplicationController
   def update
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Room was successfully updated.' }
       else
         format.html { render :edit }
       end

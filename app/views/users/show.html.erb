@@ -5,5 +5,11 @@
 <h2>All rooms</h2>
 
 <% @rooms.each do |room| %>
-  - <%= room.link %> <br/>
+  <h3> <%= room.user.username %> </h3>
+  - <%= link_to 'acessar', room.link, target: "_blank" %> <br/>
+  - <%= room.language.name %> <br/>
+  - <%= room.level %> <br/>
+  <%= link_to 'Edit', edit_room_path(room) %>
+  <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <hr>
 <% end %>
