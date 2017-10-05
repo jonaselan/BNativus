@@ -1,3 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Criar nova sala', new_room_url %>
+
+<h2>All rooms</h2>
+
+<% @rooms.each do |room| %>
+  - <%= room.link %> <br/>
+<% end %>
