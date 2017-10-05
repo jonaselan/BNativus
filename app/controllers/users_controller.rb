@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @rooms = Room.all
+    @rooms = Room.includes(:language, :user).all 
   end
 
   def edit
