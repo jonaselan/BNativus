@@ -9,7 +9,7 @@
   - <%= link_to 'acessar', room.link, target: "_blank" %> <br/>
   - <%= room.language.name %> <br/>
   - <%= room.level %> <br/>
-  - <%= time_ago_in_words room.created_at %> <br/>
+  - <%= t time_ago_in_words room.created_at %> <br/>
   <% if can? :update, room %>
     <%= link_to 'Edit', edit_room_path(room) %>
   <% end %>
