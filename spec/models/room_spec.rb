@@ -1,26 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Room, type: :model do
-  context 'is invalid when' do
+  subject { create(:room) }
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:link) }
+    it { is_expected.to validate_presence_of(:level) }
+    it { is_expected.to validate_uniqueness_of(:link) }
     it 'created without user (creator)' do
-      room = build(:room_without_creator)
-      room.valid?
-      expect(room.errors[:user]).to include('must exist')
+      expect(build(:room_without_creator).valid?).to_not be true
     end
     it 'created without language' do
-      room = build(:room_without_language)
-      room.valid?
-      expect(room.errors[:language]).to include('must exist')
+      expect(build(:room_without_language).valid?).to_not be true
     end
-    it 'created without link' do
-      room = build(:room, link: nil)
-      room.valid?
-      expect(room.errors[:link]).to include('can\'t be blank')
-    end
-    it 'created without level' do
-      room = build(:room, level: nil)
-      room.valid?
-      expect(room.errors[:level]).to include('can\'t be blank')
-    end
+  end
+
+  describe "associations" do
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:language) }
   end
 end

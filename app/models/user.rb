@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :rooms
-  
+
   validates_presence_of :username
+  validates_uniqueness_of :username, :email
 end

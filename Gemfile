@@ -35,6 +35,7 @@ gem 'cancancan', '~> 2.0'
 
 group :test do
   gem 'database_cleaner'
+  gem 'shoulda'
 end
 
 group :development, :test do
