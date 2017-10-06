@@ -1,17 +1,13 @@
 module LanguageHelper
   def select_levels
     [
-      # Begginer
-      ['Iniciante', 'Iniciante'],
-      ['Iniciante superior', 'Iniciante superior'],
-      # Intermediate
-      ['Intermediário', 'Intermediário'],
-      ['Intermediário superior', 'Intermediário superior'],
-      # Upper Advanced
-      ['Avançado', 'Avançado'],
-      ['Avançado superior', 'Avançado superior'],
-      # Native
-      ['Nativo', 'Nativo']
+      [t('begginer'), 'begginer'],
+      [t('upper_begginer'), 'upper_begginer'],
+      [t('intermediate'), 'intermediate'],
+      [t('upper_intermediate'), 'upper_intermediate'],
+      [t('advanced'), 'advanced'],
+      [t('upper_advanced'), 'upper_advanced'],
+      [t('native'), 'native']
     ]
   end
 end

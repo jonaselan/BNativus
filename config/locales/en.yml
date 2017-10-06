@@ -1,16 +1,19 @@
 en:
+  language_text: 'Language'
+  language_ptbr: 'Portuguese'
+  language_en: 'English'
+  begginer: 'Begginer'
+  upper_begginer: 'Upper Begginer'
+  intermediate: 'Intermediate'
+  upper_intermediate: 'Upper Intermediate'
+  advanced: 'Advanced'
+  upper_advanced: 'Upper Advanced'
+  native: 'Native'
   application:
-    language_text: 'Language'
-    language_ptbr: 'Portuguese'
-    language_en: 'English'
     hello: 'Hello'
     signup: 'Sign Up'
     loginin: 'Log In'
     logout: 'Log Out'
-    link_paths: 'Paths'
-    link_distances: 'Distances'
-    link_directions: 'Directions'
-    link_places: 'Places'
     invalid_infos: 'Email or password is invalid'
   formats:
       default: "%m-%d-%Y"

@@ -22,8 +22,8 @@
     <% end %>
     <br>
     <strong><%= t 'application.language_text' %>:</strong>
-    <%= link_to_unless_current t('application.language_ptbr'), locale: 'pt-br' %> |
-    <%= link_to_unless_current t('application.language_en'), locale: 'en' %>
+    <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> |
+    <%= link_to_unless_current t('language_en'), locale: 'en' %>
 
     <%= yield %>
   </body>

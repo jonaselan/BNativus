@@ -15,7 +15,7 @@
     <%= form.label :language %>
     <%= form.select(:language_id) do %>
       <% @languages.each do |lang| -%>
-        <%= content_tag(:option, lang[0], value: lang[1]) %>
+        <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
       <% end %>
     <% end %>
   </div>
