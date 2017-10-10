@@ -10,16 +10,12 @@ class User < ApplicationRecord
   validates_presence_of :username
   validates_uniqueness_of :username, :email
 
-  def self.from_omniauth(access_token)
-    data = access_token.info
-    user = User.where(email: data['email']).first
-
-    unless user
-      user = User.create(name: data['name'],
-        email: data['email'],
-        password: Devise.friendly_token[0,20]
-      )
+  def self.from_omniauth(data)
+    where(email: data['email']).first_or_create do |user|
+      user.username = data.name.parameterize.underscore
+      user.email = data.email
+      user.password = Devise.friendly_token[0,20]
+      # user.image = data.image
     end
-    user
   end
 end
