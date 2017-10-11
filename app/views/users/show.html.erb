@@ -10,6 +10,7 @@
   - <%= t room.language.name %> <br/>
   - <%= t room.level %> <br/>
   - <%= t time_ago_in_words room.created_at %> <br/>
+  <button type="button" onclick="shareOnFacebook('<%= room.link %>')">share!</button>
   <% if can? :update, room %>
     <%= link_to 'Edit', edit_room_path(room) %>
   <% end %>
@@ -18,3 +19,12 @@
   <% end %>
   <hr>
 <% end %>
+
+<script type="text/javascript">
+  function shareOnFacebook(link){
+    var winTop = (screen.height / 2) - (350 / 2);
+    var winLeft = (screen.width / 2) - (520 / 2);
+    window.open("https://www.facebook.com/sharer/sharer.php?u="+ link, "pop", "image=http://goo.gl/dS52U, width=600, height=400, scrollbars=no, top="+winTop+", left="+ winLeft);
+    return false;
+  }
+</script>
