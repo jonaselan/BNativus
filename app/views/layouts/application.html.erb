@@ -18,7 +18,8 @@
       <%= link_to t('application.logout'), destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to t('application.signup'), new_user_registration_path %> |
-      <%= link_to t('application.loginin'), new_user_session_path %>
+      <%= link_to t('application.loginin'), new_user_session_path %> |
+      <%= link_to t('application.signup_with', kind: 'Google'), user_google_oauth2_omniauth_authorize_path %>
     <% end %>
     <br>
     <strong><%= t 'application.language_text' %>:</strong>

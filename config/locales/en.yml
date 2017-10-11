@@ -12,6 +12,7 @@ en:
   application:
     hello: 'Hello'
     signup: 'Sign Up'
+    signup_with: 'Sign Up with %{kind}'
     loginin: 'Log In'
     logout: 'Log Out'
     invalid_infos: 'Email or password is invalid'
