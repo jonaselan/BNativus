@@ -12,6 +12,7 @@ pt-br:
   application:
     hello: 'Olá'
     signup: 'Criar conta'
+    signup_with: 'Logar com %{kind}'
     loginin: 'Logar'
     logout: 'Sair'
     invalid_infos: 'Email ou senha invalida(s)'
