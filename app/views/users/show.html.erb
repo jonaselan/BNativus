@@ -10,7 +10,8 @@
   - <%= t room.language.name %> <br/>
   - <%= t room.level %> <br/>
   - <%= t time_ago_in_words room.created_at %> <br/>
-  <button type="button" onclick="shareOnFacebook('<%= room.link %>')">share!</button>
+  <button type="button" onclick="shareOnFacebook('<%= room.link %>')">share on fb!</button>
+  <button type="button" onclick="shareOnTwitter('<%= room.link %>')">share on twitter!</button>
   <% if can? :update, room %>
     <%= link_to 'Edit', edit_room_path(room) %>
   <% end %>
@@ -21,10 +22,16 @@
 <% end %>
 
 <script type="text/javascript">
+  var WIN_TOP = (screen.height / 2) - (350 / 2);
+  var WIN_LEFT = (screen.width / 2) - (520 / 2);
+
   function shareOnFacebook(link){
-    var winTop = (screen.height / 2) - (350 / 2);
-    var winLeft = (screen.width / 2) - (520 / 2);
-    window.open("https://www.facebook.com/sharer/sharer.php?u="+ link, "pop", "image=http://goo.gl/dS52U, width=600, height=400, scrollbars=no, top="+winTop+", left="+ winLeft);
+    window.open("https://www.facebook.com/sharer/sharer.php?u="+ encodeURIComponent(link), "pop", "width=600, height=400, scrollbars=no, top="+WIN_TOP+", left="+ WIN_LEFT);
     return false;
+  }
+
+  function shareOnTwitter(link){
+    var text = "Replace this with your text";
+    window.open('http://twitter.com/share?url='+encodeURIComponent(link)+'&text='+encodeURIComponent(text), '', 'left='+WIN_LEFT+',top='+WIN_TOP+',width=600,height=450,personalbar=0,toolbar=0,scrollbars=0');
   }
 </script>
