@@ -9,23 +9,52 @@
   </head>
 
   <%= content_tag :body, data: { action: action_name, controller: controller_name } do %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">BNativus</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <% if user_signed_in? %>
-      <%= t('application.hello') %> <%= link_to  " #{current_user.username}!", user_path(current_user) %> <br>
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to t('application.logout'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('application.signup'), new_user_registration_path %> |
-      <%= link_to t('application.loginin'), new_user_session_path %> |
-      <%= link_to t('application.signup_with', kind: 'Google'), user_google_oauth2_omniauth_authorize_path %>
-    <% end %>
-    <br>
-    <strong><%= t 'application.language_text' %>:</strong>
-    <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> |
-    <%= link_to_unless_current t('language_en'), locale: 'en' %>
-
-    <%= yield %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Salas </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Debates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Posts</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "#{t('application.hello')}, #{current_user.username}!", user_path(current_user), class: 'nav-link' %> <br>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('application.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to t('application.signup'), new_user_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('application.loginin'), new_user_session_path, class: 'nav-link' %>
+            </li>
+            <%#= link_to t('application.signup_with', kind: 'Google'), user_google_oauth2_omniauth_authorize_path, class: 'nav-link' %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   <% end %>
 </html>
