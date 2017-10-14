@@ -10,8 +10,8 @@
   - <%= t room.language.name %> <br/>
   - <%= t room.level %> <br/>
   - <%= t time_ago_in_words room.created_at %> <br/>
-  <button type="button" onclick="shareOnFacebook('<%= room.link %>')">share on fb!</button>
-  <button type="button" onclick="shareOnTwitter('<%= room.link %>')">share on twitter!</button>
+  <button type="button" class="btn-facebook" data-link="<%= room.link %>">share on fb!</button>
+  <button type="button" class="btn-twitter" data-link="<%= room.link %>">share on twitter!</button>
   <% if can? :update, room %>
     <%= link_to 'Edit', edit_room_path(room) %>
   <% end %>
