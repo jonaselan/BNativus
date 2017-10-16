@@ -3,25 +3,22 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                  <h3> Lorem Ipsum </h3>
+                  <h3> <%= t 'language_text' %> </h3>
                   <ul>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
+                    <li> <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> </li>
+                    <li> <%= link_to_unless_current t('language_en'), locale: 'en' %> </li>
                   </ul>
               </div>
               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                  <h3> Lorem Ipsum </h3>
+                  <h3> Sobre </h3>
                   <ul>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
+                      <li> <a href="#"> A ideia </a> </li>
+                      <li> <a href="#"> Equipe </a> </li>
+                      <li> <a href="#"> Contato </a> </li>
                   </ul>
               </div>
               <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                  <h3> Lorem Ipsum </h3>
+                  <h3> Navegar </h3>
                   <ul>
                       <li> <a href="#"> Lorem Ipsum </a> </li>
                       <li> <a href="#"> Lorem Ipsum </a> </li>
@@ -57,27 +54,20 @@
                   </ul>
               </div>
           </div>
-          <!--/.row-->
       </div>
-      <!--/.container-->
   </div>
-  <!--/.footer-->
 
   <div class="footer-bottom">
       <div class="container">
-          <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
-          <div class="pull-right">
-            <strong><%= t 'application.language_text' %>:</strong>
-            <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> |
-            <%= link_to_unless_current t('language_en'), locale: 'en' %>
+          <p class="pull-left"> Copyright © Jonas Elan 2017. All right reserved. </p>
+          <!-- <div class="pull-right">
             <ul class="nav nav-pills payments">
               <li><i class="fa fa-cc-visa"></i></li>
                 <li><i class="fa fa-cc-mastercard"></i></li>
                 <li><i class="fa fa-cc-amex"></i></li>
                 <li><i class="fa fa-cc-paypal"></i></li>
             </ul>
-          </div>
+          </div> -->
       </div>
   </div>
-  <!--/.footer-bottom-->
 </footer>
