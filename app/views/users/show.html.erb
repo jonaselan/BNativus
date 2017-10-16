@@ -1,22 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Criar nova sala', new_room_url %>
-
-<h2>All rooms</h2>
-
-<% @rooms.each do |room| %>
-  <h3> <%= room.user.username %> </h3>
-  - <%= link_to 'acessar', room.link, target: "_blank" %> <br/>
-  - <%= t room.language.name %> <br/>
-  - <%= t room.level %> <br/>
-  - <%= t time_ago_in_words room.created_at %> <br/>
-  <button type="button" class="btn-facebook" data-link="<%= room.link %>">share on fb!</button>
-  <button type="button" class="btn-twitter" data-link="<%= room.link %>">share on twitter!</button>
-  <% if can? :update, room %>
-    <%= link_to 'Edit', edit_room_path(room) %>
-  <% end %>
-  <% if can? :destroy, room %>
-    <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-  <hr>
-<% end %>
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <h1 class="my-4">Shop Name</h1>
+      <div class="list-group">
+        <a href="#" class="list-group-item">Minhas Salas</a>
+        <a href="#" class="list-group-item">Debates</a>
+        <a href="#" class="list-group-item">Posts</a>
+        <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
+      </div>
+    </div>
+    <!-- /.col-lg-3 -->
+    <div class="col-lg-9">
+      <div class="last-rooms">
+        <h2> Ultimas salas </h2>
+        <%= link_to 'Criar nova sala', new_room_url %>
+      </div>
+      <div class="row">
+        <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
+</div>

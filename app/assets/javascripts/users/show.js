@@ -10,6 +10,6 @@ $(document).on('turbolinks:load', function() {
 
   $('.btn-twitter').click(function() {
     var text = "Replace this with your text";
-    window.open('http://twitter.com/share?url='+encodeURIComponent(link)+'&text='+encodeURIComponent(text), '', 'left='+WIN_LEFT+',top='+WIN_TOP+',width=600,height=450,personalbar=0,toolbar=0,scrollbars=0');
+    window.open('http://twitter.com/share?url='+encodeURIComponent($(this).data('link'))+'&text='+encodeURIComponent(text), '', 'left='+WIN_LEFT+',top='+WIN_TOP+',width=600,height=450,personalbar=0,toolbar=0,scrollbars=0');
   });
 });

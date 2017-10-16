@@ -9,6 +9,7 @@ en:
   advanced: 'Advanced'
   upper_advanced: 'Upper Advanced'
   native: 'Native'
+  sure?: 'Are you sure?'
   application:
     hello: 'Hello'
     signup: 'Sign Up'

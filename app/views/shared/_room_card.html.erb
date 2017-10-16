@@ -1,0 +1,44 @@
+<div class="col-lg-4 col-md-6 mb-4 mt-4 room-card">
+  <div class="card h-100">
+    <div class="card-body">
+      <div class="share-room pull-right">
+        <a href="" class="btn-facebook" data-link="<%= room.link %>">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="" class="btn-twitter" data-link="<%= room.link %>">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="card-room-actions pull-right">
+        <% if can? :update, room %>
+          <%= link_to(edit_room_path(room)) do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+        <% if can? :destroy, room %>
+          <%= link_to(room, method: :delete, data: { confirm: t('sure?') }) do %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <hr>
+      <h4>
+        <i class="fa fa-globe" aria-hidden="true"></i> <%= t room.language.name %>
+      </h4>
+      <h6>
+        <i class="fa fa-star" aria-hidden="true"></i> <%= t room.level %>
+      </h6>
+      <div class="row">
+        <!-- <a href="/"> -->
+          <div class="col-md-4 col-lg-4 card-img-wrap">
+            <img class="card-img-top" src="http://www.freeiconspng.com/uploads/profile-icon-9.png" alt="">
+          </div>
+          <div class="col-md-6 col-lg-6 no-padding">
+            <p class="text-center card-username"><%= t room.user.username %></p>
+          </div>
+        <!-- </a> -->
+      </div>
+    </div>
+    <%= link_to 'acessar', room.link, target: "_blank", class: 'btn btn-primary' %>
+  </div>
+</div>

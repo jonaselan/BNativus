@@ -3,5 +3,9 @@
 @import "font-awesome";
 
 // main
-@import "main/footer";
+@import "main/main";
 @import "main/authentication";
+@import "main/footer";
+
+// shared
+@import "shared/room-card";

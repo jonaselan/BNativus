@@ -9,6 +9,7 @@ pt-br:
   advanced: 'Avançado'
   upper_advanced: 'Avançado Superior'
   native: 'Nativo'
+  sure?: 'Tem certeza?'
   application:
     hello: 'Olá'
     signup: 'Criar conta'
