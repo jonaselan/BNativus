@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :language %>
+    <%= form.label :language %> <br>
     <%= form.select(:language_id, [], {}, { :class => 'custom-select' }) do %>
       <% @languages.each do |lang| -%>
         <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
@@ -21,17 +21,24 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :link %>
-    <%= form.text_field :link, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :level %>
+    <%= form.label :level %> <br>
     <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
       <% select_levels.each do |level| -%>
         <%= content_tag(:option, level[0], value: level[1]) %>
       <% end %>
     <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :link %>
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.text_field :link, class: 'form-control', id: 'link-room' %>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-info" id="btn-copy"name="button">Copy</button>
+      </div>
+    </div>
   </div>
 
   <div class="actions">

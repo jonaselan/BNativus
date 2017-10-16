@@ -1,19 +1,11 @@
-
-<div class="container">
+<div class="container index-rooms">
   <div class="row">
-    <div class="col-lg-3">
-      <%= render partial: "shared/aside_section"%>
+    <div class="last-rooms">
+      <h1>Rooms</h1>
+      <%= link_to 'Criar nova sala', new_room_url %>
     </div>
-    <!-- Rooms -->
-    <div class="col-lg-9">
-      <div class="last-rooms">
-        <h1>Rooms</h1>
-        <%= link_to 'Criar nova sala', new_room_url %>
-      </div>
-      Filtros
-      <div class="row">
-        <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
-      </div>
+    <div class="row">
+      <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
     </div>
   </div>
 </div>
