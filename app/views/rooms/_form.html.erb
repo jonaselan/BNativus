@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :language %>
-    <%= form.select(:language_id) do %>
+    <%= form.select(:language_id, [], {}, { :class => 'custom-select' }) do %>
       <% @languages.each do |lang| -%>
         <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
       <% end %>
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :link %>
-    <%= form.text_field :link %>
+    <%= form.text_field :link, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :level %>
-    <%= form.select(:level) do %>
+    <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
       <% select_levels.each do |level| -%>
         <%= content_tag(:option, level[0], value: level[1]) %>
       <% end %>
@@ -35,6 +35,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create', class: 'btn btn-success' %>
   </div>
 <% end %>

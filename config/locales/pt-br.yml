@@ -17,6 +17,9 @@ pt-br:
     loginin: 'Logar'
     logout: 'Sair'
     invalid_infos: 'Email ou senha invalida(s)'
+  users:
+    show:
+      more_rooms: 'Mais salas'
   activerecord:
     errors:
       messages:

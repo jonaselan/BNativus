@@ -17,6 +17,9 @@ en:
     loginin: 'Log In'
     logout: 'Log Out'
     invalid_infos: 'Email or password is invalid'
+  users:
+    show:
+      more_rooms: 'More rooms'
   formats:
       default: "%m-%d-%Y"
       long: "%B %d, %Y"
