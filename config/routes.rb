@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  scope ":locale", locale: /en|pt-br/ do # /#{I18n.available_locales.join("|")}/
+  scope ":locale", locale: /en|pt-br|es/ do # /#{I18n.available_locales.join("|")}/
     root to: "home#index"
 
     # authentication

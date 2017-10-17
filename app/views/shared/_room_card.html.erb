@@ -1,6 +1,9 @@
 <div class="col-lg-4 col-md-6 mb-4 mt-4 room-card">
   <div class="card h-100">
     <div class="card-body">
+      <div class="pull-left card-created-at">
+        <%= t time_ago_in_words room.created_at %>
+      </div>
       <div class="share-room pull-right">
         <a href="" class="btn-facebook" data-link="<%= room.link %>">
           <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -39,6 +42,6 @@
         <!-- </a> -->
       </div>
     </div>
-    <%= link_to 'acessar', room.link, target: "_blank", class: 'btn btn-primary' %>
+    <%= link_to t('join_room'), room.link, target: "_blank", class: 'btn btn-primary' %>
   </div>
 </div>

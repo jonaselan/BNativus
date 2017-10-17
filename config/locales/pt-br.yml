@@ -2,6 +2,7 @@ pt-br:
   language_text: 'Linguagem'
   language_ptbr: 'Português'
   language_en: 'Inglês'
+  language_es: 'Espanhol'
   begginer: 'Iniciante'
   upper_begginer: 'Iniciante Avançado'
   intermediate: 'Intermediário'
@@ -10,6 +11,7 @@ pt-br:
   upper_advanced: 'Avançado Superior'
   native: 'Nativo'
   sure?: 'Tem certeza?'
+  join_room: Entrar
   application:
     hello: 'Olá'
     signup: 'Criar conta'
