@@ -12,6 +12,8 @@ pt-br:
   native: 'Nativo'
   sure?: 'Tem certeza?'
   join_room: Entrar
+  rooms: Salas
+  posts: Artigos
   application:
     hello: 'Olá'
     signup: 'Criar conta'
@@ -31,6 +33,7 @@ pt-br:
   users:
     show:
       more_rooms: 'Mais salas'
+      last_rooms: 'Últimas salas'
   activerecord:
     models:
       user: 'Usuário'

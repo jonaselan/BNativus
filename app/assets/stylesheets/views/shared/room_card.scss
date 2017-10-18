@@ -1,32 +1,31 @@
 .room-card {
   .card{
     border-radius: 3%;
+    &:hover {
+      border-color: $dark-yellow;
+      transition: all 0.30s ease-in-out;
+    }
   }
+
   .card-body {
     padding: 15px;
-
     .card-created-at {
       font-size: 12px;
-      color: #b5b5b5;
+      color: $silver;
     }
-
     h4, h6 {
       margin: 15px 0;
     }
-
     hr {
       margin-top: 2rem;
     }
-
     .share-room {
       i {
         margin: 0 2px;
       }
     }
-
     .card-room-actions {
       margin-right: 12px;
-
       i {
         margin: 0 2px;
       }

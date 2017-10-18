@@ -1,0 +1,14 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  a {
+    color: $blue;
+    &:hover{
+      transition: all 0.30s ease-in-out;
+      color: $black;
+      text-decoration: none;
+    }
+  }
+  .main-div {
+    min-height: 750px;
+  }
+}

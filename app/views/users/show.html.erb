@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-3 user-aside-section">
       <div class="aside-user-infos">
         <%= link_to(edit_user_registration_path) do %>
           <img class="card-img-top" src="http://www.freeiconspng.com/uploads/profile-icon-9.png" alt="">
@@ -9,16 +9,16 @@
       </div>
 
       <div class="list-group">
-        <a href="#" class="list-group-item">Salas criadas</a>
+        <a href="#" class="list-group-item">Minhas salas</a>
         <a href="#" class="list-group-item">Meus debates</a>
         <a href="#" class="list-group-item">Meus Posts</a>
         <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
       </div>
     </div>
     <!-- Rooms -->
-    <div class="col-lg-9">
+    <div class="col-lg-9 user-main-section">
       <div class="last-rooms">
-        <h2> Ultimas salas </h2>
+        <h2> <% t '.last_rooms' %> </h2>
         <%= link_to 'Criar nova sala', new_room_url %>
       </div>
       <div class="row">

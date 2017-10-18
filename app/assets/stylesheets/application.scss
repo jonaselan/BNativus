@@ -2,14 +2,24 @@
 @import "bootstrap";
 @import "font-awesome";
 
+// ABSTRACT
+@import 'abstract/variables';
+@import 'abstract/functions';
+@import 'abstract/fonts';
+@import 'abstract/colors';
+@import 'abstract/positions';
+@import 'abstract/visibility';
+
+// VIEWS
 // main
-@import "main/main";
-@import "main/authentication";
-@import "main/footer";
+@import "views/main/main";
+@import "views/main/authentication";
+@import "views/main/nav_bar";
+@import "views/main/footer";
 
 // shared
-@import "shared/room-card";
+@import "views/shared/room_card";
 
 // rooms
-@import "rooms/index";
-@import "rooms/form";
+@import "views/rooms/index";
+@import "views/rooms/form";
