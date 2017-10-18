@@ -19,10 +19,26 @@ pt-br:
     loginin: 'Logar'
     logout: 'Sair'
     invalid_infos: 'Email ou senha invalida(s)'
+  room_form:
+    create_room_description: 'É preciso compartilhar o link da sala que você criou, dessa forma, outras pessoas podem entrar. Para tanto, siga os próximos passos'
+    step_1: Certifique-se de ter uma conta
+    step_2: Vá até o
+    step_3: Crie uma sala e copie o seu link, dessa forma
+    step_4: Cole o link no campo deste formulario
+    step_5: Compartilhe nas suas redes sociais ou através do link
+    copy: Copiar
+    what_is_it: O que é isso?
   users:
     show:
       more_rooms: 'Mais salas'
   activerecord:
+    models:
+      user: 'Usuário'
+      room: 'Sala'
+    attributes:
+      room:
+        level: 'Nivel'
+        language: 'Linguagem'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

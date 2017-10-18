@@ -11,7 +11,7 @@ en:
   upper_advanced: 'Upper Advanced'
   native: 'Native'
   sure?: 'Are you sure?'
-  join_room: Join
+  join_room: 'Join'
   application:
     hello: 'Hello'
     signup: 'Sign Up'
@@ -19,6 +19,15 @@ en:
     loginin: 'Log In'
     logout: 'Log Out'
     invalid_infos: 'Email or password is invalid'
+  room_form:
+    description: "You need to share the room link you've created, so others can access it. To do so, follow these steps"
+    step_1: 'Be sure to have account'
+    step_2: Go to
+    step_3: Create a room and copy the link, this way
+    step_4: Paste the link in field on this form
+    step_5: Share on your social networks or through the link
+    copy: Copy
+    what_is_it: What is it?
   users:
     show:
       more_rooms: 'More rooms'
