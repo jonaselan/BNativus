@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    authorize! :show, @user
     @rooms = Room.includes(:language, :user).all
   end
 
   def edit
+    authorize! :edit, @user
   end
 
   def update

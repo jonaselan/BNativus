@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   rescue_from CanCan::AccessDenied do |exception|
+    # TODO: redirect to (create) 404 page
     redirect_to root_url, notice: exception.message
   end
 

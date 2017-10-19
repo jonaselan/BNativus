@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @room
   end
 
   def create
@@ -39,6 +40,7 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    authorize! :read, @room
     @room.destroy
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
