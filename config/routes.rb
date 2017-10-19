@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
     # authentication
     devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-                       skip: :omniauth_callbacks
+                       skip: :omniauth_callbacks,
+                       controllers: { registrations: 'registrations' }
+
     # TODO: nested routes
     resources :users, only: [:show, :edit, :update]
     resources :rooms, except: [:show]

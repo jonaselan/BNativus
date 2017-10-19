@@ -34,6 +34,9 @@ pt-br:
     show:
       more_rooms: 'Mais salas'
       last_rooms: 'Últimas salas'
+    registrations:
+      edit:
+        settings: 'Configurações'
   activerecord:
     models:
       user: 'Usuário'
