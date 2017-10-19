@@ -4,14 +4,17 @@
       <div class="aside-user-infos">
         <%= link_to(edit_user_registration_path) do %>
           <img class="card-img-top" src="http://www.freeiconspng.com/uploads/profile-icon-9.png" alt="">
-          <p class="my-4">username</p>
+          <p class="my-4"><%= current_user.username %></p>
+        <% end %>
+        <% if profile_incomplete? current_user %>
+          Seu perfil está incompleto!
         <% end %>
       </div>
 
       <div class="list-group">
         <a href="#" class="list-group-item">Minhas salas</a>
-        <a href="#" class="list-group-item">Meus debates</a>
-        <a href="#" class="list-group-item">Meus Posts</a>
+        <!-- <a href="#" class="list-group-item">Meus debates</a> -->
+        <!-- <a href="#" class="list-group-item">Meus Posts</a> -->
         <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
       </div>
     </div>
