@@ -10,12 +10,17 @@ class User < ApplicationRecord
   validates_presence_of :username
   validates_uniqueness_of :username, :email
 
+  enum level: [:begginer, :upper_begginer, :intermediate,
+    :upper_intermediate, :advanced, :upper_advanced,
+    :native]
+
   def self.from_omniauth(data)
     where(email: data['email']).first_or_create do |user|
       user.username = data.name.parameterize.underscore
       user.email = data.email
       user.password = Devise.friendly_token[0,20]
-      # user.image = data.image
+      # TODO: when implement image upload, adapt this 
+      user.avatar = data.image
     end
   end
 end

@@ -1,0 +1,18 @@
+<% if notice && (action_name != 'more_informations') %>
+  <p class="alert alert-info alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= notice %>
+  </p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= alert %>
+  </p>
+<% end %>
+
+<%= raw flash_message %>

@@ -10,7 +10,12 @@ Rails.application.routes.draw do
                        controllers: { registrations: 'registrations' }
 
     # TODO: nested routes
-    resources :users, only: [:show, :edit, :update]
+    resources :users, only: [:show] do
+      collection do
+        get 'more_informations' => 'users#more_informations'
+        patch 'add_more_informations' => 'users#add_more_informations'
+      end
+    end
     resources :rooms, except: [:show]
   end
 

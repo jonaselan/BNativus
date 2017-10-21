@@ -13,10 +13,10 @@
   <div class="form-group">
     <%= form.label User.human_attribute_name(:language) %>
     <br>
-    <%= form.select(:language_id, [], {}, { :class => 'custom-select' }) do %>
-    <% @languages.each do |lang| -%>
-    <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
-    <% end %>
+      <%= form.select(:language_id, [], {}, { :class => 'custom-select' }) do %>
+        <% @languages.each do |lang| -%>
+        <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
+      <% end %>
     <% end %>
   </div>
 
@@ -24,9 +24,9 @@
     <%= form.label User.human_attribute_name(:level) %>
     <br>
     <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
-    <% select_levels.each do |level| -%>
-    <%= content_tag(:option, level[0], value: level[1]) %>
-    <% end %>
+      <% select_levels('string').each do |level| -%>
+        <%= content_tag(:option, level[0], value: level[1]) %>
+      <% end %>
     <% end %>
   </div>
 
