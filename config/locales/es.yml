@@ -21,6 +21,7 @@ es:
     loginin: 'Logar'
     logout: 'Salir'
     invalid_infos: 'Correo electrónico o contraseña invalida (s)'
+    settings: 'Configuración'
   room_form:
     create_room_description: 'Es necesario compartir el enlace de la sala que creaste, así que otras personas pueden acceder a ella. Para ello, siga estos pasos'
     step_1: Asegúrese de tener una cuenta
@@ -34,9 +35,6 @@ es:
     show:
       more_rooms: 'Más salas'
       last_rooms: '¡últimas salas'
-    registrations:
-      edit:
-        settings: 'Configuración'
   activerecord:
     models:
       user: 'Usuário'

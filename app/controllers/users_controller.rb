@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :edit, :update]
   before_action :authenticate_user!
 
   def show
@@ -7,19 +7,20 @@ class UsersController < ApplicationController
     @rooms = Room.includes(:language, :user).all
   end
 
-  # def edit
-  #   authorize! :edit, @user
-  # end
-  #
-  # def update
-  #   respond_to do |format|
-  #     if @user.update(user_params)
-  #       format.html { redirect_to @user, notice: 'User was successfully updated.' }
-  #     else
-  #       format.html { render :edit }
-  #     end
-  #   end
-  # end
+  def edit
+    authorize! :edit, @user
+  end
+
+  def update
+    params[:user][:level] = params[:user][:level].to_i
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
 
   def more_informations
     current_user
@@ -44,6 +45,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:country, :level)
+      params.require(:user).permit(:username, :email, :password,
+                                   :password_confirmation, :country, :level)
     end
 end
