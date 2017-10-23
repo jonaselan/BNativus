@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(version: 20171023024753) do
 
   create_table "user_known_languages", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "language_id"
+    t.bigint "known_languages_id"
     t.string "write"
     t.string "speak"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["language_id"], name: "index_user_known_languages_on_language_id"
+    t.index ["known_languages_id"], name: "index_user_known_languages_on_known_languages_id"
     t.index ["user_id"], name: "index_user_known_languages_on_user_id"
   end
 
@@ -76,6 +76,6 @@ ActiveRecord::Schema.define(version: 20171023024753) do
 
   add_foreign_key "rooms", "languages"
   add_foreign_key "rooms", "users"
-  add_foreign_key "user_known_languages", "languages"
+  add_foreign_key "user_known_languages", "languages", column: "known_languages_id"
   add_foreign_key "user_known_languages", "users"
 end

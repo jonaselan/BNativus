@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :user_known_languages
-  has_many :languages, through: :user_known_languages
+  has_many :known_languages, through: :user_known_languages, class_name: 'Language', foreign_key: 'known_languages_id'
   has_many :rooms
 
   validates_presence_of :username
