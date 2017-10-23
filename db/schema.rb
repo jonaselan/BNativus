@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023024753) do
+ActiveRecord::Schema.define(version: 20171023042101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20171023024753) do
     t.datetime "updated_at", null: false
     t.index ["known_languages_id"], name: "index_user_known_languages_on_known_languages_id"
     t.index ["user_id"], name: "index_user_known_languages_on_user_id"
+  end
+
+  create_table "user_languages_studieds", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "languages_studied_id"
+    t.string "write"
+    t.string "speak"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["languages_studied_id"], name: "index_user_languages_studieds_on_languages_studied_id"
+    t.index ["user_id"], name: "index_user_languages_studieds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,4 +89,6 @@ ActiveRecord::Schema.define(version: 20171023024753) do
   add_foreign_key "rooms", "users"
   add_foreign_key "user_known_languages", "languages", column: "known_languages_id"
   add_foreign_key "user_known_languages", "users"
+  add_foreign_key "user_languages_studieds", "languages", column: "languages_studied_id"
+  add_foreign_key "user_languages_studieds", "users"
 end
