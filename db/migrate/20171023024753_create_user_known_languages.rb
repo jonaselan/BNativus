@@ -3,8 +3,8 @@ class CreateUserKnownLanguages < ActiveRecord::Migration[5.1]
     create_table :user_known_languages do |t|
       t.references :user, foreign_key: true
       t.references :known_languages
-      t.string :write
-      t.string :speak
+      t.integer :write
+      t.integer :speak
 
       t.timestamps
     end

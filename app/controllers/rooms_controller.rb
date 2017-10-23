@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:edit, :update, :destroy]
-  before_action :set_languages, only: [:new, :edit]
   before_action :authenticate_user!
 
   def index
@@ -40,7 +39,7 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    authorize! :read, @room
+    authorize! :destroy, @room
     @room.destroy
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }

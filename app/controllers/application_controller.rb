@@ -16,11 +16,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
-  def set_languages
-    # [[name, id]]
-    @languages = Language.pluck(:name, :id)
-  end
-
   private
 
   def set_locale

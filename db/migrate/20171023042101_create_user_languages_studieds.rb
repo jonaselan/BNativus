@@ -3,8 +3,8 @@ class CreateUserLanguagesStudieds < ActiveRecord::Migration[5.1]
     create_table :user_languages_studieds do |t|
       t.references :user, foreign_key: true
       t.references :languages_studied
-      t.string :write
-      t.string :speak
+      t.integer :write
+      t.integer :speak
 
       t.timestamps
     end

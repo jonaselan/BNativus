@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    params[:user][:level] = params[:user][:level].to_i
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -23,11 +22,10 @@ class UsersController < ApplicationController
   end
 
   def more_informations
-    current_user
+    current_user.user_known_languages.build
   end
 
   def add_more_informations
-    params[:user][:level] = params[:user][:level].to_i
     respond_to do |format|
       if current_user.update(user_params)
         format.html { redirect_to user_path(current_user.id), notice: t('devise.registrations.signed_up') }
@@ -45,7 +43,12 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password,
-                                   :password_confirmation, :country, :level)
+      params.require(:user)
+            .permit(:username, :email, :password,
+                    :password_confirmation, :country,
+                      user_known_languages_attributes: [
+                        :id, :known_languages_id, :speak, :write
+                      ]
+                   )
     end
 end

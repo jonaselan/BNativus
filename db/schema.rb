@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20171023042101) do
   create_table "user_known_languages", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "known_languages_id"
-    t.string "write"
-    t.string "speak"
+    t.integer "write"
+    t.integer "speak"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["known_languages_id"], name: "index_user_known_languages_on_known_languages_id"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20171023042101) do
   create_table "user_languages_studieds", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "languages_studied_id"
-    t.string "write"
-    t.string "speak"
+    t.integer "write"
+    t.integer "speak"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["languages_studied_id"], name: "index_user_languages_studieds_on_languages_studied_id"
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20171023042101) do
     t.string "age"
     t.date "bith_date"
     t.string "bio"
-    t.integer "level"
     t.string "country", default: ""
     t.integer "created_rooms", default: 0
     t.string "phone", default: ""
