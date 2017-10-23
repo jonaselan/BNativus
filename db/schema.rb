@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018170708) do
+ActiveRecord::Schema.define(version: 20171023024753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20171018170708) do
     t.datetime "updated_at", null: false
     t.index ["language_id"], name: "index_rooms_on_language_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
+  create_table "user_known_languages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "language_id"
+    t.string "write"
+    t.string "speak"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_user_known_languages_on_language_id"
+    t.index ["user_id"], name: "index_user_known_languages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,4 +76,6 @@ ActiveRecord::Schema.define(version: 20171018170708) do
 
   add_foreign_key "rooms", "languages"
   add_foreign_key "rooms", "users"
+  add_foreign_key "user_known_languages", "languages"
+  add_foreign_key "user_known_languages", "users"
 end

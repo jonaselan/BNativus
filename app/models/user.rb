@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :user_known_languages
+  has_many :languages, through: :user_known_languages
   has_many :rooms
 
   validates_presence_of :username
@@ -19,7 +21,7 @@ class User < ApplicationRecord
       user.username = data.name.parameterize.underscore
       user.email = data.email
       user.password = Devise.friendly_token[0,20]
-      # TODO: when implement image upload, adapt this 
+      # TODO: when implement image upload, adapt this
       user.avatar = data.image
     end
   end
