@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_languages, only: [:more_informations, :edit]
   before_action :authenticate_user!
 
   def show

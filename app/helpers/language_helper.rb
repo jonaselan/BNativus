@@ -3,7 +3,7 @@ module LanguageHelper
     value = type == 'number' ? numbers_levels : string_levels
     [
       [t('begginer'), value[0]],
-      [t('upper_begginer'), value[1].to_i],
+      [t('upper_begginer'), value[1]],
       [t('intermediate'), value[2]],
       [t('upper_intermediate'), value[3]],
       [t('advanced'), value[4]],

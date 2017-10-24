@@ -19,29 +19,16 @@
               <label for=""> lingua que você domina </label>
               <br>
               <%= f.fields_for :user_known_languages do |ff| %>
-                <%= ff.select(:known_languages_id, [], {}, { :class => 'custom-select' }) do %>
-                  <% Language.pluck(:name, :id).each do |lang| -%>
-                    <%= content_tag(:option, t(lang[0]), value: lang[1]) %>
-                  <% end %>
+                <%= ff.label :language %><br>
+                <%= ff.select(:known_languages_id, @languages, {}, { class: 'custom-select' }) %>
+
+                <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
+                  <%= options_for_select(select_levels('number'), ff.object.speak) %>
                 <% end %>
 
-                <div class="form-group">
-                  <%= ff.label :speak %><br />
-                  <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
-                    <% select_levels('number').each do |level| -%>
-                      <%= content_tag(:option, level[0], value: level[1]) %>
-                    <% end %>
-                  <% end %>
-                </div>
-
-                <div class="form-group">
-                  <%= ff.label :write %><br />
-                  <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
-                    <% select_levels('number').each do |level| -%>
-                      <%= content_tag(:option, level[0], value: level[1]) %>
-                    <% end %>
-                  <% end %>
-                </div>
+                <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
+                  <%= options_for_select(select_levels('number'), ff.object.write) %>
+                <% end %>
               <% end %>
             </div>
 
