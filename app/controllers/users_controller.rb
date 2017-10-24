@@ -24,15 +24,14 @@ class UsersController < ApplicationController
 
   def more_informations
     current_user.user_known_languages.build
+    current_user.user_languages_studieds.build
   end
 
   def add_more_informations
-    respond_to do |format|
-      if current_user.update(user_params)
-        format.html { redirect_to user_path(current_user.id), notice: t('devise.registrations.signed_up') }
-      else
-        format.html { render :more_informations }
-      end
+    if current_user.update(user_params)
+      redirect_to user_path(current_user.id), notice: t('devise.registrations.signed_up')
+    else
+      render :more_informations
     end
   end
 
@@ -49,6 +48,9 @@ class UsersController < ApplicationController
                     :password_confirmation, :country,
                       user_known_languages_attributes: [
                         :id, :known_languages_id, :speak, :write
+                      ],
+                      user_languages_studieds_attributes: [
+                        :id, :languages_studied_id, :speak, :write
                       ]
                    )
     end

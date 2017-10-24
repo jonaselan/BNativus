@@ -1,46 +1,78 @@
 <div class="container" id='singup'>
   <div class="row justify-content-md-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-  			<fieldset>
-  				<h2>Almost there</h2>
-          <hr class="colorgraph">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-3">
+			<fieldset>
+				<h2>Almost there</h2>
+        <h6>Precisamos de mais algumas informações importantes sobre você </h6>
+        <hr class="colorgraph">
 
-          <%= form_for(current_user, as: :user, url: add_more_informations_users_path, method: :patch) do |f| %>
-            <div class="form-group">
-              <%= f.label :country %><br />
-              <%= f.text_field :country, autofocus: true, class: 'form-control input-lg', placeholder: "Country" %>
-            </div>
+        <%= form_for(current_user, as: :user, url: add_more_informations_users_path, method: :patch) do |f| %>
+          <div class="form-group">
+            <label for="">De onde você é?</label><br />
+            <%= f.text_field :country, autofocus: true, class: 'form-control input-lg', placeholder: "Country" %>
+          </div>
 
-            <!-- <div class="form-group">
-              <label for="">Qual lingua você está estudando?</label>
-            </div> -->
-
-            <div class="form-group">
-              <label for=""> lingua que você domina </label>
-              <br>
-              <%= f.fields_for :user_known_languages do |ff| %>
-                <%= ff.label :language %><br>
-                <%= ff.select(:known_languages_id, @languages, {}, { class: 'custom-select' }) %>
-
-                <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
-                  <%= options_for_select(select_levels('number'), ff.object.speak) %>
-                <% end %>
-
-                <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
-                  <%= options_for_select(select_levels('number'), ff.object.write) %>
-                <% end %>
-              <% end %>
-            </div>
-
-            <hr class="colorgraph">
-            <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <%= f.submit "Continuar", class: 'btn btn-lg btn-success btn-block' %>
+          <div class="form-group">
+            <h5 for="">Qual lingua você está estudando?</h5>
+            <small class="form-text text-muted">Poderá ser adicionado outras nas configurações</small>
+            <br>
+            <%= f.fields_for :user_languages_studieds do |ff| %>
+              <div class="row">
+                <div class="col-lg-4">
+                  <%= ff.label :language %><br>
+                  <%= ff.select(:languages_studied_id, @languages, {}, { class: 'custom-select' }) %>
+                </div>
+                <div class="col-lg-4">
+                  <%= ff.label :speak %><br>
+                  <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
+                    <%= options_for_select(select_levels('number'), ff.object.speak) %>
+                  <% end %>
+                </div>
+                <div class="col-lg-4">
+                  <%= ff.label :write %><br>
+                  <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
+                    <%= options_for_select(select_levels('number'), ff.object.write) %>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% end %>
+          </div>
 
-          <% end %>
-  			</fieldset>
+          <div class="form-group">
+            <h5 for=""> lingua que você domina </h5>
+            <small class="form-text text-muted">Poderá ser adicionado outras nas configurações</small>
+            <br>
+            <%= f.fields_for :user_known_languages do |ff| %>
+              <div class="row">
+                <div class="col-lg-4">
+                  <%= ff.label :language %><br>
+                  <%= ff.select(:known_languages_id, @languages, {}, { class: 'custom-select' }) %>
+                </div>
+                <div class="col-lg-4">
+                  <%= ff.label :speak %>
+                  <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
+                    <%= options_for_select(select_levels('number'), ff.object.speak) %>
+                  <% end %>
+                </div>
+                <div class="col-lg-4">
+                  <%= ff.label :write %>
+                  <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
+                    <%= options_for_select(select_levels('number'), ff.object.write) %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+          <hr class="colorgraph">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <%= f.submit "Continuar", class: 'btn btn-lg btn-success btn-block' %>
+            </div>
+          </div>
+
+        <% end %>
+			</fieldset>
   	</div>
   </div>
 </div>

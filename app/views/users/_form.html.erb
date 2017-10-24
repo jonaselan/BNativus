@@ -50,7 +50,32 @@
       </div>
       <br>
     <% end %>
-
+  </div>
+  <hr>
+  <div class="form-group">
+    <h5 for=""> idioma que está estudando </h5>
+    <br>
+    <%= f.fields_for :user_languages_studieds do |ff| %>
+      <div class="row">
+        <div class="col-lg-4">
+          <%= ff.label :language %><br>
+          <%= ff.select(:languages_studied_id, @languages, {}, { class: 'custom-select' }) %>
+        </div>
+        <div class="col-lg-4">
+          <%= ff.label :speak %><br />
+          <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
+            <%= options_for_select(select_levels('number'), ff.object.speak) %>
+          <% end %>
+        </div>
+        <div class="col-lg-4">
+          <%= ff.label :write %><br />
+          <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
+            <%= options_for_select(select_levels('number'), ff.object.write) %>
+          <% end %>
+        </div>
+      </div>
+      <br>
+    <% end %>
   </div>
 
   <div class="form-group">
