@@ -1,0 +1,12 @@
+<div class="col-lg-3">
+  <%= f.label :speak %><br />
+  <%= f.select(:speak, [], {}, { :class => 'custom-select' }) do %>
+    <%= options_for_select(select_levels('number'), f.object.speak) %>
+  <% end %>
+</div>
+<div class="col-lg-3">
+  <%= f.label :write %><br />
+  <%= f.select(:write, [], {}, { :class => 'custom-select' }) do %>
+    <%= options_for_select(select_levels('number'), f.object.write) %>
+  <% end %>
+</div>

@@ -27,55 +27,29 @@
   </div>
   <hr>
   <div class="form-group">
-    <h5 for=""> idioma que você domina </h5>
+    <h5 for=""> idioma que está estudando </h5>
     <br>
-    <%= f.fields_for :user_known_languages do |ff| %>
-      <div class="row">
-        <div class="col-lg-4">
-          <%= ff.label :language %><br>
-          <%= ff.select(:known_languages_id, @languages, {}, { class: 'custom-select' }) %>
-        </div>
-        <div class="col-lg-4">
-          <%= ff.label :speak %><br />
-          <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
-            <%= options_for_select(select_levels('number'), ff.object.speak) %>
-          <% end %>
-        </div>
-        <div class="col-lg-4">
-          <%= ff.label :write %><br />
-          <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
-            <%= options_for_select(select_levels('number'), ff.object.write) %>
-          <% end %>
-        </div>
-      </div>
-      <br>
-    <% end %>
+    <div class="user_languages_studieds">
+      <%= f.fields_for :user_languages_studieds do |ff| %>
+        <%= render partial: 'shared/languages_studieds_fields', locals: {f: ff} %>
+        <br>
+      <% end %>
+    </div>
+    <%= link_to_add_association 'Add', f, :user_languages_studieds, class: 'btn', partial: 'shared/languages_studieds_fields',
+        data: { association_insertion_node: '.user_languages_studieds', association_insertion_method: :append } %>
   </div>
   <hr>
   <div class="form-group">
-    <h5 for=""> idioma que está estudando </h5>
+    <h5 for=""> idioma que você domina </h5>
     <br>
-    <%= f.fields_for :user_languages_studieds do |ff| %>
-      <div class="row">
-        <div class="col-lg-4">
-          <%= ff.label :language %><br>
-          <%= ff.select(:languages_studied_id, @languages, {}, { class: 'custom-select' }) %>
-        </div>
-        <div class="col-lg-4">
-          <%= ff.label :speak %><br />
-          <%= ff.select(:speak, [], {}, { :class => 'custom-select' }) do %>
-            <%= options_for_select(select_levels('number'), ff.object.speak) %>
-          <% end %>
-        </div>
-        <div class="col-lg-4">
-          <%= ff.label :write %><br />
-          <%= ff.select(:write, [], {}, { :class => 'custom-select' }) do %>
-            <%= options_for_select(select_levels('number'), ff.object.write) %>
-          <% end %>
-        </div>
-      </div>
-      <br>
-    <% end %>
+    <div class="user_known_languages">
+      <%= f.fields_for :user_known_languages do |ff| %>
+        <%= render partial: 'shared/known_languages_fields', locals: {f: ff} %>
+        <br>
+      <% end %>
+    </div>
+    <%= link_to_add_association 'Add', f, :user_known_languages, class: 'btn', partial: 'shared/known_languages_fields',
+        data: { association_insertion_node: '.user_known_languages', association_insertion_method: :append } %>
   </div>
 
   <div class="form-group">

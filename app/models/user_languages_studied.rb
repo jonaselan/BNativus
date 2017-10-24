@@ -1,5 +1,5 @@
 class UserLanguagesStudied < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :languages_studied, class_name: 'Language'
 
   enum level: [:begginer, :upper_begginer, :intermediate,

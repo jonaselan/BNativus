@@ -1,0 +1,10 @@
+<div class="row nested-fields">
+  <div class="col-lg-2">
+    <%= f.label :language %><br>
+    <%= f.select(:known_languages_id, @languages, {}, { class: 'custom-select' }) %>
+  </div>
+  <%= render 'shared/language_fields', f: f %>
+  <div class="col-lg-2 div-delete-button">
+    <%= link_to_remove_association 'X', f, class: 'btn btn-danger round' %>
+  </div>
+</div>

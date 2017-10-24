@@ -50,6 +50,7 @@ GEM
     builder (3.2.3)
     byebug (9.1.0)
     cancancan (2.0.0)
+    cocoon (1.2.10)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
     database_cleaner (1.6.1)
@@ -236,6 +237,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.beta)
   byebug
   cancancan (~> 2.0)
+  cocoon
   database_cleaner
   devise
   factory_girl_rails

@@ -47,10 +47,10 @@ class UsersController < ApplicationController
             .permit(:username, :email, :password,
                     :password_confirmation, :country,
                       user_known_languages_attributes: [
-                        :id, :known_languages_id, :speak, :write
+                        :id, :known_languages_id, :speak, :write, :_destroy
                       ],
                       user_languages_studieds_attributes: [
-                        :id, :languages_studied_id, :speak, :write
+                        :id, :languages_studied_id, :speak, :write, :_destroy
                       ]
                    )
     end

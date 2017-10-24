@@ -1,5 +1,5 @@
-lang_pt = Language.create(name: 'language_ptbr', shortcode: 'pt-br')
 lang_en = Language.create(name: 'language_en', shortcode: 'en')
+lang_pt = Language.create(name: 'language_ptbr', shortcode: 'pt-br')
 Language.create(name: 'language_es', shortcode: 'es')
 
 uu = User.create(email: 'email@email.com', username: 'user1', password: 123456)
