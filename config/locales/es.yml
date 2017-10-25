@@ -43,6 +43,17 @@ es:
       room:
         level: 'Nivel'
         language: 'Lenguaje'
+      language:
+        level: Nivel
+        speak: hablar
+        write: escribir
+      user:
+        first_name: 'Nombre'
+        last_name: 'Apellido'
+        gender: 'Sexo'
+        born_on: 'Fecha de nacimiento'
+        country: 'Pais'
+        phone: 'Teléfono'
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

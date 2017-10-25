@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        current_user.increment!(:created_rooms)
         format.html { redirect_to user_path(current_user), notice: 'Room was successfully created.' }
       else
         format.html { render :new }

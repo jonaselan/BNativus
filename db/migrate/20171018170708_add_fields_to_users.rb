@@ -5,7 +5,7 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.1]
     add_column :users, :gender, :integer
     add_column :users, :avatar, :string, default: ""
     add_column :users, :age, :string
-    add_column :users, :bith_date, :date, default: ""
+    add_column :users, :born_on, :date, default: ""
     add_column :users, :bio, :string
     add_column :users, :country, :string, default: ""
     add_column :users, :created_rooms, :integer, default: 0

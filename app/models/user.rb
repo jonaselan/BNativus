@@ -17,6 +17,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_known_languages, allow_destroy: true
   accepts_nested_attributes_for :user_languages_studieds, allow_destroy: true
 
+  enum gender: [:M, :F]
+
   def self.from_omniauth(data)
     where(email: data['email']).first_or_create do |user|
       user.username = data.name.parameterize.underscore

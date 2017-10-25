@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20171023042101) do
     t.integer "gender"
     t.string "avatar", default: ""
     t.string "age"
-    t.date "bith_date"
+    t.date "born_on"
     t.string "bio"
     t.string "country", default: ""
     t.integer "created_rooms", default: 0

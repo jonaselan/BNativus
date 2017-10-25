@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :set_languages, only: [:more_informations, :edit]
+  before_action :set_languages, only: [:more_informations, :edit, :update]
+  before_action :adapt_params, only: [:update, :create]
   before_action :authenticate_user!
 
   def show
@@ -41,11 +42,15 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def adapt_params
+      params[:user][:gender] = params[:user][:gender].to_i
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user)
-            .permit(:username, :email, :password,
-                    :password_confirmation, :country,
+            .permit(:first_name, :last_name, :gender, :username, :email, :password,
+                    :avatar, :born_on, :password_confirmation, :country, :bio, :phone,
                       user_known_languages_attributes: [
                         :id, :known_languages_id, :speak, :write, :_destroy
                       ],
