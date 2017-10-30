@@ -1,49 +1,41 @@
 <div class="create-room-form">
   <%= form_with(model: room, local: true) do |form| %>
-  <% if room.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-      <% room.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+    <%= render partial: "shared/form_messages", locals: {model: room} %>
+
+    <div class="form-group">
+      <%= form.label Room.human_attribute_name(:language) %>
+      <br>
+      <%= form.select(:language_id, @languages, {}, { class: 'custom-select' }) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label Room.human_attribute_name(:level) %>
+      <br>
+      <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
+        <%= options_for_select(select_levels('string')) %>
       <% end %>
-    </ul>
-  </div>
-  <% end %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label Room.human_attribute_name(:language) %>
-    <br>
-    <%= form.select(:language_id, @languages, {}, { class: 'custom-select' }) %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label Room.human_attribute_name(:level) %>
-    <br>
-    <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
-      <%= options_for_select(select_levels('string')) %>
-    <% end %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :link %>
-    <small>
-      <a href="" data-toggle="modal" data-target="#exampleModalLong">
-        <%= t ('room_form.what_is_it') %></a>
-    </small>
-    <div class="row">
-      <div class="col-lg-10">
-        <%= form.text_field :link, class: 'form-control', id: 'link-room' %>
-      </div>
-      <div class="col-lg-2">
-        <button type="button" class="btn btn-info" id="btn-copy" name="button">
-          <%= t ('room_form.copy') %>
-        </button>
+    <div class="form-group">
+      <%= form.label :link %>
+      <small>
+        <a href="" data-toggle="modal" data-target="#exampleModalLong">
+          <%= t ('room_form.what_is_it') %></a>
+      </small>
+      <div class="row">
+        <div class="col-lg-10">
+          <%= form.text_field :link, class: 'form-control', id: 'link-room' %>
+        </div>
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-info" id="btn-copy" name="button">
+            <%= t ('room_form.copy') %>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="actions">
-    <%= form.submit 'Create', class: 'btn btn-success' %>
-  </div>
+    <div class="actions">
+      <%= form.submit 'Create', class: 'btn btn-success' %>
+    </div>
   <% end %>
 
   <!-- Modal -->

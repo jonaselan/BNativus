@@ -1,15 +1,7 @@
 <h2> <%= t 'application.settings' %> </h2>
 
 <%= form_with(model: user, local: true) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/form_messages", locals: {model: user} %>
 
   <div class="form-group">
     <%= f.label :username %><br />
