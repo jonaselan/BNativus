@@ -34,7 +34,7 @@ es:
   users:
     show:
       more_rooms: 'Más salas'
-      last_rooms: '¡últimas salas'
+      recents_rooms: 'salas recientes'
   activerecord:
     models:
       user: 'Usuário'

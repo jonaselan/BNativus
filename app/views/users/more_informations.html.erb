@@ -9,7 +9,9 @@
         <%= form_for(current_user, as: :user, url: add_more_informations_users_path, method: :patch) do |f| %>
           <div class="form-group">
             <label for="">De onde você é?</label><br />
-            <%= f.text_field :country, autofocus: true, class: 'form-control input-lg', placeholder: "Country" %>
+            <%= f.select(:country, [], {}, { class: 'custom-select' }) do %>
+              <%= options_for_select(select_countries, f.object.country) %>
+            <% end %>
           </div>
 
           <div class="form-group">

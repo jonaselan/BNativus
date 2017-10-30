@@ -60,7 +60,9 @@
 
   <div class="form-group">
     <%= f.label User.human_attribute_name(:country) %><br />
-    <%= f.text_field :country, autofocus: true, class: 'form-control input-lg', placeholder: "Country" %>
+    <%= f.select(:country, [], {}, { class: 'custom-select' }) do %>
+      <%= options_for_select(select_countries, f.object.country) %>
+    <% end %>
   </div>
   <hr>
   <div class="form-group">
