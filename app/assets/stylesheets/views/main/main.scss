@@ -1,15 +1,27 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-  background: $purple;
+  background: white;
   a {
-    color: $purple;
+    color: $light-blue;
     &:hover{
       transition: all 0.30s ease-in-out;
-      color: $black;
+      color: $dark-blue;
       text-decoration: none;
     }
   }
   .main-div {
     min-height: 750px;
+  }
+  .container-default {
+    padding: 17px;
+    box-shadow: -3px 3px 7px 2px $mid-grey;
+    border-radius: 6px;
+    background: white;
+  }
+}
+
+#rooms {
+  .nav-link-room{
+    font-weight: bolder;
   }
 }

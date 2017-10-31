@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%= content_tag :body, data: { action: action_name, controller: controller_name } do %>
+  <%= content_tag :body, id: controller_name, data: { action: action_name, controller: controller_name } do %>
     <% unless show_nav_bar?(action_name, controller_name) %>
       <%= render 'layouts/nav_bar' %>
     <% end %>

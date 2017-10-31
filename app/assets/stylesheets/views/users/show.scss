@@ -1,9 +1,11 @@
 .container {
   .user-aside-section, .user-main-section {
     min-height: 750px;
-    padding: 18px;
-    box-shadow: -4px 3px 16px 2px $mid-grey;
-    border-radius: 6px;
-    background: $light-grey;
+  }
+
+  .user-aside-section {
+    .user-aside-header{
+      text-align: center;
+    }
   }
 }

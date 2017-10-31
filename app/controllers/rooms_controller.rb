@@ -44,7 +44,7 @@ class RoomsController < ApplicationController
     authorize! :destroy, @room
     @room.destroy
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Room was successfully destroyed.' }
     end
   end
 
