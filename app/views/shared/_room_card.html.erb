@@ -32,14 +32,12 @@
         <i class="fa fa-star" aria-hidden="true"></i> <%= t room.level %>
       </h6>
       <div class="row">
-        <!-- <a href="/"> -->
-          <div class="col-md-4 col-lg-4 card-img-wrap">
-            <img class="card-img-top" src="http://www.freeiconspng.com/uploads/profile-icon-9.png" alt="">
-          </div>
-          <div class="col-md-6 col-lg-6 no-padding">
-            <p class="text-center card-username"><%= t room.user.username %></p>
-          </div>
-        <!-- </a> -->
+        <div class="col-md-4 col-lg-4 card-img-wrap">
+          <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+        </div>
+        <div class="col-md-6 col-lg-6 no-padding">
+          <p class="text-center card-username"><%= t room.user.username %></p>
+        </div>
       </div>
     </div>
     <%= link_to t('join_room'), room.link, target: "_blank", class: 'btn btn-primary' %>

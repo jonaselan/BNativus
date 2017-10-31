@@ -1,33 +1,46 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3 user-aside-section">
-      <div class="aside-user-infos">
+    <div class="col-lg-3">
+      <div class="user-aside-section">
         <%= link_to(edit_user_registration_path) do %>
-          <img class="card-img-top" src="http://www.freeiconspng.com/uploads/profile-icon-9.png" alt="">
+          <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
           <p class="my-4"><%= current_user.username %></p>
         <% end %>
         <% if profile_incomplete? current_user %>
           Seu perfil está incompleto!
         <% end %>
-      </div>
 
-      <div class="list-group">
-        <a href="#" class="list-group-item">Minhas salas</a>
-        <!-- <a href="#" class="list-group-item">Meus debates</a> -->
-        <!-- <a href="#" class="list-group-item">Meus Posts</a> -->
-        <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
+        <div class="list-group">
+          <a href="#" class="list-group-item">Minhas salas</a>
+          <!-- <a href="#" class="list-group-item">Meus debates</a> -->
+          <!-- <a href="#" class="list-group-item">Meus Posts</a> -->
+          <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
+        </div>
       </div>
     </div>
     <!-- Rooms -->
-    <div class="col-lg-9 user-main-section">
-      <div class="last-rooms">
-        <h2> <%= t '.recents_rooms' %> </h2>
-        <%= link_to 'Criar nova sala', new_room_url %>
+    <div class="col-lg-9">
+      <div class="user-main-section">
+        <div class="last-rooms">
+          <h2> <%= t '.recents_rooms' %> </h2>
+          <%= link_to 'Criar nova sala', new_room_url %>
+        </div>
+        <div class="row">
+          <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+        </div>
+        <%= link_to t('.more_rooms'), rooms_path %>
       </div>
-      <div class="row">
-        <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
-      </div>
-      <%= link_to t('.more_rooms'), rooms_path %>
     </div>
   </div>
 </div>
+
+<!-- <div class="row">
+    <div class="col-4 mx-auto">
+        <div class="card card-body">col-4 mx-auto</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4 ml-auto">
+        <div class="card card-body">col-4 ml-auto</div>
+    </div>
+</div> -->
