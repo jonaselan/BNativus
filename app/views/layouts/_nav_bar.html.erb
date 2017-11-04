@@ -24,6 +24,9 @@
         <li class="nav-item">
           <%= link_to t('application.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
+        <li class="nav-item" id="suggestion-link">
+          <a class="nav-link" href="https://goo.gl/forms/0rvlpwcR8SVcbj3m1" target="_blank">Your suggestions</a>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to t('application.signup'), new_user_registration_path, class: 'nav-link' %>
