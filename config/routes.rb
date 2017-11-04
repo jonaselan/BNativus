@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     # TODO: nested routes
     resources :users, only: [:show, :edit, :update] do
       collection do
+        get 'my_rooms' => 'users#my_rooms'
         get 'more_informations' => 'users#more_informations'
         patch 'add_more_informations' => 'users#add_more_informations'
       end

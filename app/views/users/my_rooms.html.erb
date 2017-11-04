@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="user-main-section container-default">
+    <div class="last-rooms">
+      <h2> Minhas salas </h2>
+      <%= link_to 'Criar nova sala', new_room_url %>
+    </div>
+    <div class="row">
+      <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+    </div>
+    <%= link_to t('.more_rooms'), rooms_path %>
+  </div>
+</div>
