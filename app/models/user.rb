@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  mount_uploader :avatar, ImageUserUploader
+
   has_many :user_known_languages, dependent: :destroy
   has_many :known_languages, through: :user_known_languages, class_name: 'Language', foreign_key: 'known_languages_id'
   has_many :user_languages_studieds, dependent: :destroy

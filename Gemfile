@@ -35,6 +35,9 @@ gem "cocoon"
   gem 'omniauth-google-oauth2'
 # end
 
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :test do
   gem 'database_cleaner'
   gem 'shoulda'

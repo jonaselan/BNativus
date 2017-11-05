@@ -1,7 +1,11 @@
 <div class="user-aside-section container-default">
   <div class="user-aside-header">
     <%= link_to(edit_user_registration_path) do %>
-      <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+      <% if current_user.avatar.blank? %>
+        <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+      <% else %>
+        <%= cl_image_tag(current_user.avatar, class: 'card-img-top') %>
+      <% end %>
     <% end %>
     <p class="no-marging"><%= current_user.username %></p>
     <p class="no-marging">Salas Criadas: <%= current_user.created_rooms %></p>

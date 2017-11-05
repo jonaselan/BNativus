@@ -1,0 +1,18 @@
+development:
+  cloud_name: daomm7dbp
+  api_key: '715586817174786'
+  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: daomm7dbp
+  api_key: '715586817174786'
+  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: daomm7dbp
+  api_key: '715586817174786'
+  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
+  enhance_image_tag: true
+  static_image_support: false
