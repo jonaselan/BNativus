@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :set_languages, only: [:more_informations, :edit, :update]
-  before_action :adapt_params, only: [:update, :create]
+  before_action :adapt_params_to_int, only: [:update, :create]
   before_action :authenticate_user!
 
   def show
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    params[:user][:avatar] = upload_avatar unless params[:user][:avatar].blank?
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -46,7 +47,12 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    def adapt_params
+    def upload_avatar
+      img = Cloudinary::Uploader.upload(params[:user][:avatar])
+      img['url']
+    end
+
+    def adapt_params_to_int
       params[:user][:gender] = params[:user][:gender].to_i
     end
 

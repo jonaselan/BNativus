@@ -33,7 +33,11 @@
       </h6>
       <div class="row">
         <div class="col-md-4 col-lg-4 card-img-wrap">
-          <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+          <% if current_user.avatar.blank? %>
+            <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+          <% else %>
+            <%= cl_image_tag(current_user.avatar, class: 'card-img-top') %>
+          <% end %>
         </div>
         <div class="col-md-6 col-lg-6 no-padding">
           <p class="text-center card-username"><%= t room.user.username %></p>

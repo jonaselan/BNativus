@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  mount_uploader :avatar, ImageUserUploader
+  # mount_uploader :avatar, ImageUserUploader
 
   has_many :user_known_languages, dependent: :destroy
   has_many :known_languages, through: :user_known_languages, class_name: 'Language', foreign_key: 'known_languages_id'
@@ -26,7 +26,6 @@ class User < ApplicationRecord
       user.username = data.name.parameterize.underscore
       user.email = data.email
       user.password = Devise.friendly_token[0,20]
-      # TODO: when implement image upload, adapt this
       user.avatar = data.image
     end
   end
