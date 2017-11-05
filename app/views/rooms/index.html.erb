@@ -1,8 +1,12 @@
-<div class="index-rooms">
-  <div class="row container-default">
-    <div class="last-rooms">
-      <h1>Rooms</h1>
-      <%= link_to 'Criar nova sala', new_room_url %>
+<div class="container index-rooms">
+  <div class="container-default">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Rooms</h1>
+      </div>
+      <div class="col-lg-4">
+        <%= link_to 'Criar nova sala', new_room_url, class: 'float-right' %>
+      </div>
     </div>
     <div class="row">
       <%= render partial: "shared/room_card", collection: @rooms, as: :room %>

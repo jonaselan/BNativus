@@ -1,0 +1,18 @@
+<div class="user-aside-section container-default">
+  <div class="user-aside-header">
+    <%= link_to(edit_user_registration_path) do %>
+      <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+    <% end %>
+    <p class="no-marging"><%= current_user.username %></p>
+    <p class="no-marging">Salas Criadas: <%= current_user.created_rooms %></p>
+    <% if profile_incomplete? current_user %>
+      <p class="m-2 red"> Seu perfil está incompleto!  </p>
+    <% end %>
+  </div>
+  <div class="list-group">
+    <%= link_to 'Minhas salas', my_rooms_users_url, class: 'list-group-item my-rooms' %>
+    <!-- <a href="#" class="list-group-item">Meus debates</a> -->
+    <!-- <a href="#" class="list-group-item">Meus Posts</a> -->
+    <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
+  </div>
+</div>

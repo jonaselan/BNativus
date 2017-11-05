@@ -1,12 +1,24 @@
 <div class="container">
-  <div class="user-main-section container-default">
-    <div class="last-rooms">
-      <h2> Minhas salas </h2>
-      <%= link_to 'Criar nova sala', new_room_url %>
+  <div class="row">
+    <div class="col-lg-3 aside-my-rooms">
+      <%= render "users/shared/aside" %>
     </div>
-    <div class="row">
-      <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+    <!-- Rooms -->
+    <div class="col-lg-9">
+      <div class="user-main-section container-default">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2> Minhas salas </h2>
+          </div>
+          <div class="col-lg-4">
+            <%= link_to 'Criar nova sala', new_room_url, class: 'float-right' %>
+          </div>
+        </div>
+        <div class="row">
+          <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+        </div>
+        <%= link_to t('.more_rooms'), rooms_path %>
+      </div>
     </div>
-    <%= link_to t('.more_rooms'), rooms_path %>
   </div>
 </div>

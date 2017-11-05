@@ -1,31 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <div class="user-aside-section container-default">
-        <div class="user-aside-header">
-          <%= link_to(edit_user_registration_path) do %>
-            <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
-          <% end %>
-          <p class="no-marging"><%= current_user.username %></p>
-          <p class="no-marging">Salas Criadas: <%= current_user.created_rooms %></p>
-          <% if profile_incomplete? current_user %>
-            <p class="m-2 red"> Seu perfil está incompleto!  </p>
-          <% end %>
-        </div>
-        <div class="list-group">
-          <%= link_to 'Minhas salas', my_rooms_users_url, class: 'list-group-item' %>
-          <!-- <a href="#" class="list-group-item">Meus debates</a> -->
-          <!-- <a href="#" class="list-group-item">Meus Posts</a> -->
-          <!-- <a href="#" class="list-group-item">Estatisticas</a> -->
-        </div>
-      </div>
+      <%= render "users/shared/aside" %>
     </div>
     <!-- Rooms -->
     <div class="col-lg-9">
       <div class="user-main-section container-default">
-        <div class="last-rooms">
-          <h2> <%= t '.recents_rooms' %> </h2>
-          <%= link_to 'Criar nova sala', new_room_url %>
+        <div class="row">
+          <div class="col-lg-8">
+            <h2> <%= t '.recents_rooms' %> </h2>
+          </div>
+          <div class="col-lg-4">
+            <%= link_to 'Criar nova sala', new_room_url, class: 'float-right' %>
+          </div>
         </div>
         <div class="row">
           <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
@@ -35,14 +22,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="row">
-    <div class="col-4 mx-auto">
-        <div class="card card-body">col-4 mx-auto</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-4 ml-auto">
-        <div class="card card-body">col-4 ml-auto</div>
-    </div>
-</div> -->

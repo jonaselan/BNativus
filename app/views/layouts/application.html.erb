@@ -13,8 +13,10 @@
       <%= render 'layouts/nav_bar' %>
     <% end %>
 
-    <div class="container main-div mt-5 mb-5">
-      <%= render 'layouts/flash_messages' %>
+    <div class="main-div mt-5 mb-5">
+      <div class="container">
+        <%= render 'layouts/flash_messages' %>
+      </div>
       <%= yield %>
     </div>
 
