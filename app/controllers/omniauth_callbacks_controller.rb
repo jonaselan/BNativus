@@ -4,9 +4,12 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       sign_in(@user)
-      redirect_to more_informations_users_path, event: :authentication
+      if @user.created_at > 1.minute.ago
+        redirect_to more_informations_users_path
+      else
+        redirect_to @user, event: :authentication
+      end
     else
-      # session['devise.google_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow some session stores
       redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
     end
   end
