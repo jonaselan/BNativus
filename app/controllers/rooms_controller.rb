@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rooms = Room.all
+    @rooms = Room.includes(:language, :user).all
   end
 
   def new
