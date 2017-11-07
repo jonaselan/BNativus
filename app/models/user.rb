@@ -24,6 +24,8 @@ class User < ApplicationRecord
   def self.from_omniauth(data)
     where(email: data['email']).first_or_create do |user|
       user.username = data.name.parameterize.underscore
+      user.first_name = data.first_name
+      user.last_name = data.last_name
       user.email = data.email
       user.password = Devise.friendly_token[0,20]
       user.avatar = data.image
