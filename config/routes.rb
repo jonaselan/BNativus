@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  match "/404", to: "errors#not_found", via: :all, as: :not_found
+  match "/500", to: "errors#internal_server_error", via: :all, as: :internal_server_error
 
   scope ":locale", locale: /en|pt-br|es/ do # /#{I18n.available_locales.join("|")}/
     root to: "home#index"
@@ -18,8 +20,11 @@ Rails.application.routes.draw do
       end
     end
     resources :rooms, except: [:show]
+    get '*path', to: "errors#not_found"
   end
 
+  # when is put some route without :locale parameter,
+  # with the language is done redirect
   get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   get '', to: redirect("/#{I18n.default_locale}")
 end
