@@ -11,5 +11,7 @@ RSpec.describe User, type: :model do
 
   describe "associations" do
     it { is_expected.to have_many(:rooms) }
+    it { is_expected.to have_many(:user_known_languages) }
+    it { is_expected.to have_many(:user_languages_studieds) }
   end
 end
