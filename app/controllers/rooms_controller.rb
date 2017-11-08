@@ -20,32 +20,26 @@ class RoomsController < ApplicationController
     @room.user = current_user
     @room.ip = request.remote_ip
 
-    respond_to do |format|
-      if @room.save
-        current_user.increment!(:created_rooms)
-        format.html { redirect_to user_path(current_user), notice: 'Room was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @room.save
+      current_user.increment!(:created_rooms)
+      redirect_to user_path(current_user), notice: t('.notice')
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @room.update(room_params)
-        format.html { redirect_to user_path(current_user), notice: 'Room was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @room.update(room_params)
+      redirect_to user_path(current_user), notice: t('.notice')
+    else
+      render :edit
     end
   end
 
   def destroy
     authorize! :destroy, @room
     @room.destroy
-    respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Room was successfully destroyed.' }
-    end
+    redirect_to root_url, notice: t('.notice')
   end
 
   private

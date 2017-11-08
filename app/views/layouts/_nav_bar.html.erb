@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item nav-link-room">
-        <%= link_to t('rooms'), rooms_path, class: 'nav-link' %>
+        <%= link_to t('rooms_text'), rooms_path, class: 'nav-link' %>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link" href="#">Debates</a>
@@ -25,7 +25,7 @@
           <%= link_to t('application.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
         <li class="nav-item" id="suggestion-link">
-          <a class="nav-link" href="https://goo.gl/forms/0rvlpwcR8SVcbj3m1" target="_blank">Your suggestions</a>
+          <a class="nav-link" href="https://goo.gl/forms/0rvlpwcR8SVcbj3m1" target="_blank"><%= t 'suggestions' %></a>
         </li>
       <% else %>
         <li class="nav-item">

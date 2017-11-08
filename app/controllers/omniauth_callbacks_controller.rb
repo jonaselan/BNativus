@@ -10,7 +10,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to @user, event: :authentication
       end
     else
-      redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
+      redirect_to new_user_registration_url, alert: t(@user.errors.full_messages.join("\n"))
     end
   end
 

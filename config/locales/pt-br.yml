@@ -12,8 +12,10 @@ pt-br:
   native: 'Nativo'
   sure?: 'Tem certeza?'
   join_room: Entrar
-  rooms: Salas
-  posts: Artigos
+  rooms_text: Salas
+  posts_text: Artigos
+  suggestions: Sugestões?
+  create_room: Criar nova sala
   application:
     hello: 'Olá'
     signup: 'Criar conta'
@@ -35,6 +37,15 @@ pt-br:
     show:
       more_rooms: 'Mais salas'
       recents_rooms: 'Últimas salas'
+    update:
+      notice: "Usuário atualizado com sucesso"
+  rooms:
+    create:
+      notice: Sala criada com sucesso
+    update:
+      notice: Sala atualizada com sucesso
+    destroy:
+      notice: Sala apagada com sucesso
   activerecord:
     models:
       user: 'Usuário'

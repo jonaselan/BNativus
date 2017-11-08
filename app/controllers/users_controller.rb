@@ -15,12 +15,10 @@ class UsersController < ApplicationController
 
   def update
     params[:user][:avatar] = upload_avatar unless params[:user][:avatar].blank?
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @user.update(user_params)
+      redirect_to @user, notice: t('.notice')
+    else
+      render :edit
     end
   end
 
