@@ -27,7 +27,7 @@ footer {
   	max-width: 100%;
   }
   #footer h3 {
-  	border-bottom: 1px solid #BAC1C8;
+  	border-bottom: 1px solid $light-blue;
   	color: #54697E;
   	font-size: 18px;
   	font-weight: 600;
@@ -86,8 +86,8 @@ footer {
   	box-shadow: 0 1px 0 #B4B3B3;
   }
   .social li {
-  	background: none repeat scroll 0 0 #B5B5B5;
-  	border: 2px solid #B5B5B5;
+  	background: none repeat scroll 0 0 $light-blue;
+  	border: 2px solid $light-blue;
   	-webkit-border-radius: 50%;
   	-moz-border-radius: 50%;
   	-o-border-radius: 50%;
@@ -133,8 +133,5 @@ footer {
   }
   #footer-bottom p.pull-left {
   	padding-top: 6px;
-  }
-  .payments {
-  	font-size: 1.5em;
   }
 }
