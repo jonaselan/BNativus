@@ -2,7 +2,7 @@
   <div id="footer">
       <div class="container">
           <div class="row">
-              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                   <h3> <%= t 'language_text' %> </h3>
                   <ul>
                     <li> <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> </li>
@@ -10,25 +10,27 @@
                     <li> <%= link_to_unless_current t('language_es'), locale: 'es' %> </li>
                   </ul>
               </div>
-              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                   <h3> Sobre </h3>
                   <ul>
                       <li> <a href="#"> A ideia </a> </li>
                       <li> <a href="#"> Equipe </a> </li>
                       <li> <a href="#"> Contato </a> </li>
-                      <li> <a href="#"> Ajude o projeto </a> </li>
+                      <li> <a href="#"> Contribua </a> </li>
                   </ul>
               </div>
-              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                   <h3> Navegar </h3>
                   <ul>
-                      <li> <a href="#"> Salas </a> </li>
+                      <li>
+                        <%= link_to t('rooms_text'), rooms_path, class: 'nav-link' %>
+                      </li>
                       <li> <a href="https://goo.gl/forms/0rvlpwcR8SVcbj3m1" target="_blank"><%= t('suggestions') %></a></li>
                       <li> <a href="#"> Lorem Ipsum </a> </li>
                       <li> <a href="#"> Lorem Ipsum </a> </li>
                   </ul>
               </div>
-              <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
                   <h3> Lorem Ipsum </h3>
                   <ul>
                       <li> <a href="#"> Lorem Ipsum </a> </li>
@@ -37,38 +39,27 @@
                       <li> <a href="#"> Lorem Ipsum </a> </li>
                   </ul>
               </div>
-              <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+              <!-- <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
                   <h3> Redes sociais </h3>
-                  <!-- <ul>
-                      <li>
-                          <div class="input-append newsletter-box text-center">
-                              <input type="text" class="full text-center" placeholder="Email ">
-                              <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
-                          </div>
-                      </li>
-                  </ul> -->
                   <ul class="social">
-                      <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                      <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                      <!-- <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                      <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li> -->
-                      <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+
                   </ul>
-              </div>
+              </div> -->
           </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © Jonas Elan 2017. All right reserved. </p>
-            <!-- <div class="pull-right">
-              <ul class="nav nav-pills payments">
-                <li><i class="fa fa-cc-visa"></i></li>
-                <li><i class="fa fa-cc-mastercard"></i></li>
-                <li><i class="fa fa-cc-amex"></i></li>
-                <li><i class="fa fa-cc-paypal"></i></li>
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="pull-left"> Copyright © Jonas Elan 2017. All right reserved. </p>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav pull-right social">
+                <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                <!-- <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li> -->
               </ul>
-            </div> -->
-        </div>
+            </div>
+          </div>
       </div>
   </div>
 </footer>
