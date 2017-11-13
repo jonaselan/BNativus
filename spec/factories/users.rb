@@ -6,7 +6,7 @@ FactoryGirl.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     gender 'M'
-    avatar 'link'
+    # avatar 'link'
     age { Faker::Number.between(18, 60) }
     born_on { Faker::Date.birthday(18, 60) }
     bio { Faker::ChuckNorris.fact }

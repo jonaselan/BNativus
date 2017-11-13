@@ -1,5 +1,7 @@
 # BNativus
 
+[![Build Status](https://travis-ci.org/jonaselan/BNativus.svg?branch=master)](https://travis-ci.org/jonaselan/BNativus)
+
 System for those who are learning a new language and seek for people for practice your speaking and writing
 
 ## Requirements

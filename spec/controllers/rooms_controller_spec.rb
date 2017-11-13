@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RoomsController, type: :controller do
+  let(:current_user) { subject.current_user }
   let(:language) { create(:language) }
   let(:valid_attributes) {{ link: "MyString", level: "MyString", language_id: language.id }}
   let(:invalid_attributes) { attributes_for(:room, link: '') }
@@ -19,11 +20,11 @@ RSpec.describe RoomsController, type: :controller do
       end
       it "creates a new Room with user related" do
         post :create, params: {room: valid_attributes, locale: I18n.locale }
-        expect(Room.last.user).to eq subject.current_user
+        expect(Room.last.user).to eq current_user
       end
       it "increment a rooms number of current user" do
         post :create, params: {room: valid_attributes, locale: I18n.locale }
-        expect(subject.current_user.created_rooms).to eq 1
+        expect(current_user.created_rooms).to eq 1
       end
     end
   end
