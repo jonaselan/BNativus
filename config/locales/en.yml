@@ -35,7 +35,8 @@ en:
   users:
     show:
       more_rooms: 'More rooms'
-    update: User was sucessfully updated
+    update:
+      notice: User was sucessfully updated
   rooms:
     create:
       notice: Room was sucessfully creted
