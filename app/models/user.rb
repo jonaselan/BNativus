@@ -33,4 +33,8 @@ class User < ApplicationRecord
       user.avatar = data.image
     end
   end
+
+  def to_param
+    "#{id} #{username}".parameterize
+  end
 end
