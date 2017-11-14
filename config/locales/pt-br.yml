@@ -60,6 +60,13 @@ pt-br:
       notice: Sala atualizada com sucesso
     destroy:
       notice: Sala apagada com sucesso
+  debates:
+    create:
+      notice: Debate criada com sucesso
+    update:
+      notice: Debate atualizada com sucesso
+    destroy:
+      notice: Debate apagada com sucesso
   activerecord:
     models:
       user: 'Usuário'

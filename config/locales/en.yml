@@ -58,6 +58,13 @@ en:
       notice: Room was sucessfully updated
     destroy:
       notice: Room was sucessfully deleted
+  debates:
+    create:
+      notice: Debate was sucessfully creted
+    update:
+      notice: Debate was sucessfully updated
+    destroy:
+      notice: Debate was sucessfully deleted
   formats:
       default: "%m-%d-%Y"
       long: "%B %d, %Y"

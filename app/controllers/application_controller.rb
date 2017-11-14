@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     @languages.each { |l| l[0] = t(l[0]) }
   end
 
+  def set_categories
+    @categories = Category.pluck(:title, :id)
+    @categories.each { |l| l[0] = t(l[0]) }
+  end
+
   private
 
   def set_locale

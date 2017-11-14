@@ -39,7 +39,7 @@ class RoomsController < ApplicationController
   def destroy
     authorize! :destroy, @room
     @room.destroy
-    redirect_to root_url, notice: t('.notice')
+    redirect_to user_path(current_user), notice: t('.notice')
   end
 
   private

@@ -2,48 +2,49 @@
   <div class="card h-100">
     <div class="card-body">
       <div class="pull-left card-created-at">
-        <%= t time_ago_in_words room.created_at %>
+        <%= t time_ago_in_words posting.created_at %>
       </div>
       <div class="share-room pull-right">
-        <a href="" class="btn-facebook" data-link="<%= room.link %>">
+        <a href="" class="btn-facebook" data-link="<%= posting %>">
           <i class="fa fa-facebook" aria-hidden="true"></i>
         </a>
-        <a href="" class="btn-twitter" data-link="<%= room.link %>">
+        <a href="" class="btn-twitter" data-link="<%= posting %>">
           <i class="fa fa-twitter" aria-hidden="true"></i>
         </a>
+        <%=  %>
       </div>
       <div class="card-room-actions pull-right">
-        <% if can? :update, room %>
-          <%= link_to(edit_room_path(room)) do %>
+        <% if can? :update, posting %>
+          <%= link_to(edit_debate_path(posting)) do %>
             <i class="fa fa-pencil" aria-hidden="true"></i>
           <% end %>
         <% end %>
-        <% if can? :destroy, room %>
-          <%= link_to(room, method: :delete, data: { confirm: t('sure?') }) do %>
+        <% if can? :destroy, posting %>
+          <%= link_to(posting, method: :delete, data: { confirm: t('sure?') }) do %>
             <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
         <% end %>
       </div>
       <hr>
       <h4>
-        <i class="fa fa-globe" aria-hidden="true"></i> <%= t room.language.name %>
+        <i class="fa fa-globe" aria-hidden="true"></i> <%= t posting.language.name %>
       </h4>
       <h6>
-        <i class="fa fa-star" aria-hidden="true"></i> <%= t room.level %>
+        <i class="fa fa-star" aria-hidden="true"></i> <%= t posting.category.title %>
       </h6>
       <div class="row">
         <div class="col-md-4 col-lg-4 card-img-wrap">
-          <% if room.user.avatar.blank? %>
+          <% if posting.user.avatar.blank? %>
             <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
           <% else %>
-            <%= cl_image_tag(room.user.avatar, class: 'card-img-top') %>
+            <%= cl_image_tag(posting.user.avatar, class: 'card-img-top') %>
           <% end %>
         </div>
         <div class="col-md-6 col-lg-6 no-padding">
-          <p class="text-center card-username"><%= t room.user.username %></p>
+          <p class="text-center card-username"><%= t posting.user.username %></p>
         </div>
       </div>
     </div>
-    <%= link_to t('join_room'), room.link, target: "_blank", class: 'btn b-light-blue' %>
+    <%= link_to t('join_room'), posting, target: "_blank", class: 'btn b-light-blue' %>
   </div>
 </div>

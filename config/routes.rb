@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       end
     end
     resources :rooms, except: [:show]
+    resources :debates
+    resources :articles
+    
     get '*path', to: "errors#not_found"
   end
 

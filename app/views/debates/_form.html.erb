@@ -1,17 +1,31 @@
-<%= form_with(model: debate, local: true) do |form| %>
-  <% if debate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(debate.errors.count, "error") %> prohibited this debate from being saved:</h2>
+<div class="create-debate-form">
+  <%= form_with(model: debate, local: true) do |form| %>
+    <%= render partial: "shared/form_messages", locals: {model: debate} %>
 
-      <ul>
-      <% debate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :content %>
+      <%= form.text_area :content, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label Debate.human_attribute_name(:language) %>
+      <br>
+      <%= form.select(:language_id, @languages, {}, { class: 'custom-select' }) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label Debate.human_attribute_name(:category) %>
+      <br>
+      <%= form.select(:category_id, @categories, {}, { class: 'custom-select' }) %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Done', class: 'btn btn-success' %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

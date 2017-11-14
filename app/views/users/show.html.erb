@@ -3,10 +3,10 @@
     <div class="col-lg-3">
       <%= render "users/shared/aside" %>
     </div>
-    <!-- Rooms -->
     <div class="col-lg-9">
       <div class="user-main-section container-default">
         <div class="row">
+          <!-- Rooms -->
           <div class="col-lg-8">
             <h2> <%= t '.recents_rooms' %> </h2>
           </div>
@@ -18,6 +18,21 @@
           <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
         </div>
         <%= link_to t('.more_rooms'), rooms_path %>
+        <hr>
+        <div class="row">
+          <!-- Debates -->
+          <div class="col-lg-8">
+            <h2> <%= t '.recents_debates' %> </h2>
+          </div>
+          <div class="col-lg-4">
+            <%= link_to t('create_debate'), new_debate_url, class: 'float-right' %>
+          </div>
+        </div>
+        <div class="row">
+          <%= render partial: "shared/posting_card", collection: @debates, as: :posting %>
+        </div>
+        <%= link_to t('.more_debates'), debates_path %>
+        <hr>
       </div>
     </div>
   </div>
