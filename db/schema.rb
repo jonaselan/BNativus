@@ -10,16 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023042101) do
+ActiveRecord::Schema.define(version: 20171113231352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "posting_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["posting_id"], name: "index_comments_on_posting_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "languages", force: :cascade do |t|
     t.string "name"
     t.string "shortcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "postings", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.integer "views", default: 0
+    t.string "type"
+    t.bigint "language_id"
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_postings_on_category_id"
+    t.index ["language_id"], name: "index_postings_on_language_id"
+    t.index ["user_id"], name: "index_postings_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -84,6 +115,11 @@ ActiveRecord::Schema.define(version: 20171023042101) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "postings"
+  add_foreign_key "comments", "users"
+  add_foreign_key "postings", "categories"
+  add_foreign_key "postings", "languages"
+  add_foreign_key "postings", "users"
   add_foreign_key "rooms", "languages"
   add_foreign_key "rooms", "users"
   add_foreign_key "user_known_languages", "languages", column: "known_languages_id"

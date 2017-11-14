@@ -13,3 +13,9 @@ UserLanguageStudied.create(user: uu2, languages_studied: lang_pt, write: 4, spea
 
 Room.create(link: 'http://link.com', level: 'begginer', language: lang_pt, user: uu)
 Room.create(link: 'http://link.com', level: 'upper_begginer', language: lang_en, user: uu2)
+
+c1 = Categoty.create(type: 'music')
+c2 = Categoty.create(type: 'travel')
+
+Article.create(title: 'string', content: 'string', views: 2, language: lang_pt, user: uu2, category: c1)
+Debate.create(title: 'string2', content: 'string2', views: 1, language: lang_en, user: uu, category: c2)

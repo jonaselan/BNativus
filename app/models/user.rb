@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :user_languages_studieds, dependent: :destroy
   has_many :languages_studied, through: :user_languages_studieds, class_name: 'Language', foreign_key: 'languages_studied_id'
   has_many :rooms, dependent: :destroy
+  has_many :postings
+  has_many :comments
 
   validates_presence_of :username
   validates_uniqueness_of :username, :email
