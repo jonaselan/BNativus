@@ -1,10 +1,10 @@
-<div class="col-lg-4 col-md-6 mb-4 mt-4 room-card">
+<div class="col-lg-4 col-md-6 mt-4 model-card">
   <div class="card h-100">
     <div class="card-body">
       <div class="pull-left card-created-at">
         <%= t time_ago_in_words room.created_at %>
       </div>
-      <div class="share-room pull-right">
+      <div class="share-link-card pull-right">
         <a href="" class="btn-facebook" data-link="<%= room.link %>">
           <i class="fa fa-facebook" aria-hidden="true"></i>
         </a>
@@ -12,7 +12,7 @@
           <i class="fa fa-twitter" aria-hidden="true"></i>
         </a>
       </div>
-      <div class="card-room-actions pull-right">
+      <div class="card-actions pull-right">
         <% if can? :update, room %>
           <%= link_to(edit_room_path(room)) do %>
             <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -25,25 +25,26 @@
         <% end %>
       </div>
       <hr>
-      <h4>
-        <i class="fa fa-globe" aria-hidden="true"></i> <%= t room.language.name %>
-      </h4>
-      <h6>
-        <i class="fa fa-star" aria-hidden="true"></i> <%= t room.level %>
-      </h6>
-      <div class="row">
-        <div class="col-md-4 col-lg-4 card-img-wrap">
-          <% if room.user.avatar.blank? %>
-            <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
-          <% else %>
-            <%= cl_image_tag(room.user.avatar, class: 'card-img-top') %>
-          <% end %>
+      <%= link_to(room.link, target: "_blank", class: 'model-link') do %>
+        <h4>
+          <i class="fa fa-globe" aria-hidden="true"></i> <%= t room.language.name %>
+        </h4>
+        <h6>
+          <i class="fa fa-star" aria-hidden="true"></i> <%= t room.level %>
+        </h6>
+        <div class="row">
+          <div class="col-md-4 col-lg-4 card-img-wrap">
+            <% if room.user.avatar.blank? %>
+              <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+            <% else %>
+              <%= cl_image_tag(room.user.avatar, class: 'card-img-top') %>
+            <% end %>
+          </div>
+          <div class="col-md-6 col-lg-6 no-padding">
+            <p class="text-center card-username"><%= room.user.username %></p>
+          </div>
         </div>
-        <div class="col-md-6 col-lg-6 no-padding">
-          <p class="text-center card-username"><%= t room.user.username %></p>
-        </div>
-      </div>
+      <% end %>
     </div>
-    <%= link_to t('join_room'), room.link, target: "_blank", class: 'btn b-light-blue' %>
   </div>
 </div>

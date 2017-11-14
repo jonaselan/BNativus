@@ -1,4 +1,4 @@
-.room-card {
+.model-card {
   .card{
     border-radius: 3%;
     &:hover {
@@ -7,12 +7,8 @@
     }
   }
 
-  .btn {
-    color: white;
-    &:hover{
-      transition: all 0.30s ease-in-out;
-      background-color: $dark-blue;
-    }
+  .model-link{
+    color: black;
   }
 
   .card-body {
@@ -27,12 +23,12 @@
     hr {
       margin-top: 2rem;
     }
-    .share-room {
+    .share-link-card {
       i {
         margin: 0 2px;
       }
     }
-    .card-room-actions {
+    .card-actions {
       margin-right: 12px;
       i {
         margin: 0 2px;
