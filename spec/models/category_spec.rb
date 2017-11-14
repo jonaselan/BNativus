@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { create(:category) }
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:type) }
+  end
+
+  describe "associations" do
+    it { is_expected.to have_many(:postings) }
+  end
 end

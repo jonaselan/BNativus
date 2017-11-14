@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20171113231352) do
   create_table "postings", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "views"
+    t.integer "views", default: 0
     t.string "type"
     t.bigint "language_id"
     t.bigint "user_id"

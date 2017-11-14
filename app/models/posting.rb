@@ -3,4 +3,7 @@ class Posting < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :comments
+
+  validates_presence_of :title
+  validates_presence_of :content
 end
