@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update] do
       collection do
         get 'my_rooms' => 'users#my_rooms'
+        get 'my_debates' => 'users#my_debates'
         get 'more_informations' => 'users#more_informations'
         patch 'add_more_informations' => 'users#add_more_informations'
       end
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     resources :rooms, except: [:show]
     resources :debates
     resources :articles
-    
+
     get '*path', to: "errors#not_found"
   end
 

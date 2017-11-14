@@ -40,6 +40,10 @@ class UsersController < ApplicationController
     @rooms = current_user.rooms
   end
 
+  def my_debates
+    @debates = current_user.debates
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

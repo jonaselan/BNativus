@@ -25,7 +25,8 @@ es:
   stories: 'historias'
   others: 'otros'
   sure?: '¿Estás seguro?'
-  join_room: Entrar
+  my_rooms: 'Mis salas'
+  my_debates: 'Mis debates'
   rooms_text: Salas
   posts_text: Artículos
   suggestions: u sugerencia

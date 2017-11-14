@@ -25,7 +25,8 @@ pt-br:
   stories: 'histórias'
   others: 'outros'
   sure?: 'Tem certeza?'
-  join_room: Entrar
+  my_rooms: 'Minhas salas'
+  my_debates: 'Meus debates'
   rooms_text: Salas
   posts_text: Artigos
   suggestions: Sugestões?

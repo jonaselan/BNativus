@@ -1,22 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-3 aside-my-rooms">
+    <div class="col-lg-3 aside-my-debates">
       <%= render "users/shared/aside" %>
     </div>
     <div class="col-lg-9">
       <div class="user-main-section container-default">
         <div class="row">
           <div class="col-lg-8">
-            <h2> <%= t('my_rooms') %> </h2>
+            <h2> <%= t('my_debates') %> </h2>
           </div>
           <div class="col-lg-4">
-            <%= link_to t('create_room'), new_room_url, class: 'float-right' %>
+            <%= link_to t('create_debate'), new_debate_url, class: 'float-right' %>
           </div>
         </div>
         <div class="row">
-          <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+          <%= render partial: "shared/posting_card", collection: @debates, as: :posting %>
         </div>
-        <%= link_to t('.more_rooms'), rooms_path %>
+        <%= link_to t('.more_debates'), debates_path %>
       </div>
     </div>
   </div>
