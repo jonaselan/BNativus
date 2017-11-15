@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171113231352) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "title"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20171113231352) do
   create_table "postings", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "views", default: 0
+    t.integer "views"
     t.string "type"
     t.bigint "language_id"
     t.bigint "user_id"

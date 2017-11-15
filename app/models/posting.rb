@@ -6,4 +6,8 @@ class Posting < ApplicationRecord
 
   validates_presence_of :title
   validates_presence_of :content
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end
 end
