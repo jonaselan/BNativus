@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.increment!(:views) unless current_user == @article.user
   end
 
   def new
