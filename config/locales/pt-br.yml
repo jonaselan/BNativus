@@ -68,6 +68,13 @@ pt-br:
       notice: Debate atualizada com sucesso
     destroy:
       notice: Debate apagada com sucesso
+  articles:
+    create:
+      notice: Artigo criada com sucesso
+    update:
+      notice: Artigo atualizada com sucesso
+    destroy:
+      notice: Artigo apagada com sucesso
   activerecord:
     models:
       user: 'Usuário'

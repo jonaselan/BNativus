@@ -2,6 +2,7 @@ class DebatesController < ApplicationController
   before_action :set_debate, only: [:show, :edit, :update, :destroy]
   before_action :set_languages, only: [:new, :edit, :create]
   before_action :set_categories, only: [:new, :edit, :create]
+  before_action :authenticate_user!
 
   def index
     @debates = Debate.all
@@ -10,12 +11,10 @@ class DebatesController < ApplicationController
   def show
   end
 
-  # GET /debates/new
   def new
     @debate = Debate.new
   end
 
-  # GET /debates/1/edit
   def edit
     authorize! :edit, @debate
   end
@@ -42,7 +41,7 @@ class DebatesController < ApplicationController
   def destroy
     authorize! :destroy, @debate
     @debate.destroy
-    redirect_to debates_url, notice: t('.notice')
+    redirect_to user_path(current_user), notice: t('.notice')
   end
 
   private

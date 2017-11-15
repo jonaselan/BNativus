@@ -14,7 +14,8 @@
       </div>
       <div class="card-actions pull-right">
         <% if can? :update, posting %>
-          <%= link_to(edit_debate_path(posting)) do %>
+          <% edit_link = posting.type == "Debate" ? edit_debate_path(posting) : edit_article_path(posting) %>
+          <%= link_to(edit_link) do %>
             <i class="fa fa-pencil" aria-hidden="true"></i>
           <% end %>
         <% end %>
@@ -47,6 +48,5 @@
         </div>
       <% end %>
     </div>
-
   </div>
 </div>

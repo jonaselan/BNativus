@@ -1,4 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<div class="container">
+  <div class="container-default">
+    <div class="row">
+      <div class="col-lg-6">
+        <i class="fa fa-eye" aria-hidden="true"></i> <%= @article.views %>
+      </div>
+      <div class="col-lg-6">
+        <i class="fa fa-tag" aria-hidden="true"></i> <%= @article.category.title %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-2">
+        <% if @article.user.avatar.blank? %>
+          <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+        <% else %>
+          <%= cl_image_tag(@article.user.avatar, class: 'card-img-top') %>
+        <% end %>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= @article.user.username %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= t @article.language.name %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <h1><%= @article.title %></h1>
+        <hr>
+        <%= @article.content %>
+      </div>
+    </div>
+  </div>
+</div>

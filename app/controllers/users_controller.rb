@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def show
     authorize! :show, @user
     @rooms = Room.includes(:language, :user).order(created_at: :desc).limit 6
-    @debates = Debate.includes(:language, :user, :category).order(created_at: :desc).limit 6
+    @debates = Debate.includes(:language, :user, :category).order(created_at: :desc).limit 4
+    @articles = Article.includes(:language, :user, :category).order(created_at: :desc).limit 4
   end
 
   def edit

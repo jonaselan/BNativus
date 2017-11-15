@@ -64,6 +64,13 @@ en:
       notice: Debate was sucessfully updated
     destroy:
       notice: Debate was sucessfully deleted
+  articles:
+    create:
+      notice: Article was sucessfully creted
+    update:
+      notice: Article was sucessfully updated
+    destroy:
+      notice: Article was sucessfully deleted
   formats:
       default: "%m-%d-%Y"
       long: "%B %d, %Y"
