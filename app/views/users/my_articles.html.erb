@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 aside-my-articles">
+      <%= render "users/shared/aside" %>
+    </div>
+    <div class="col-lg-9">
+      <div class="user-main-section container-default">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2> <%= t('my_articles') %> </h2>
+          </div>
+          <div class="col-lg-4">
+            <%= link_to t('create_article'), new_article_url, class: 'float-right' %>
+          </div>
+        </div>
+        <div class="row">
+          <%= render partial: "shared/posting_card", collection: @articles, as: :posting %>
+        </div>
+        <%= link_to t('.more_articles'), articles_path %>
+      </div>
+    </div>
+  </div>
+</div>

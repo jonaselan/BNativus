@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       collection do
         get 'my_rooms' => 'users#my_rooms'
         get 'my_debates' => 'users#my_debates'
+        get 'my_article' => 'users#my_articles'
         get 'more_informations' => 'users#more_informations'
         patch 'add_more_informations' => 'users#add_more_informations'
       end

@@ -12,9 +12,9 @@
       <li class="nav-item nav-link-debate">
         <%= link_to 'Debates', debates_path, class: 'nav-link' %>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="#"><%= t 'articles'%></a>
-      </li> -->
+      <li class="nav-item nav-link-article">
+        <%= link_to t('articles_text'), articles_path, class: 'nav-link' %>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
