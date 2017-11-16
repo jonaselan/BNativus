@@ -55,7 +55,7 @@ describe OmniauthCallbacksController, type: :controller do
       it 'redirect to user\'s home page' do
         user = create(:user, email: 'john@example.com', created_at: '2014-09-19 07:03:30 -0300')
         get :google_oauth2
-        expect(response).to redirect_to(user_url(user.id))
+        expect(response).to redirect_to(user_url user)
       end
     end
   end
