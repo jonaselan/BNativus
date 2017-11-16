@@ -28,7 +28,7 @@ pt-br:
   my_rooms: 'Minhas salas'
   my_debates: 'Meus debates'
   rooms_text: Salas
-  posts_text: Artigos
+  articles_text: Artigos
   suggestions: Sugestões?
   create_room: Criar nova sala
   application:

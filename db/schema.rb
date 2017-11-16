@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113231352) do
+ActiveRecord::Schema.define(version: 20171116003844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "type"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20171113231352) do
   create_table "postings", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "views"
+    t.integer "views", default: 0
     t.string "type"
     t.bigint "language_id"
     t.bigint "user_id"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20171113231352) do
     t.string "country", default: ""
     t.integer "created_rooms", default: 0
     t.string "phone", default: ""
+    t.integer "created_articles", default: 0
+    t.integer "created_debates", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

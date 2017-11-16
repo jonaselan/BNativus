@@ -28,8 +28,8 @@ es:
   my_rooms: 'Mis salas'
   my_debates: 'Mis debates'
   rooms_text: Salas
-  posts_text: Artículos
-  suggestions: u sugerencia
+  articles_text: Artículos
+  suggestions: sugerencia
   create_room: crear nueva sala
   application:
     hello: 'Hola'

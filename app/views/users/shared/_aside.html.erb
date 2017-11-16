@@ -8,7 +8,9 @@
       <% end %>
     <% end %>
     <p class="no-marging"><%= current_user.username %></p>
-    <p class="no-marging">Salas Criadas: <%= current_user.created_rooms %></p>
+    <p class="no-marging"> <%= t 'rooms_text' %>: <%= current_user.created_rooms %></p>
+    <p class="no-marging"> <%= t 'articles_text' %>: <%= current_user.created_articles %></p>
+    <p class="no-marging"> Debates: <%= current_user.created_debates %></p>
     <% if profile_incomplete? current_user %>
       <p class="m-2 red"> Seu perfil está incompleto!  </p>
     <% end %>

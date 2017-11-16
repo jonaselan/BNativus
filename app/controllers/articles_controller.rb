@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      # current_user.increment!(:created_aticles)
+      current_user.increment!(:created_aticles)
       redirect_to user_path(current_user), notice: t('.notice')
     else
       render :new

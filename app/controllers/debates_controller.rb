@@ -24,7 +24,7 @@ class DebatesController < ApplicationController
     @debate = Debate.new(debate_params)
     @debate.user = current_user
     if @debate.save
-      # current_user.increment!(:created_debates)
+      current_user.increment!(:created_debates)
       redirect_to user_path(current_user), notice: t('.notice')
     else
       render :new
