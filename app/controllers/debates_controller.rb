@@ -9,7 +9,9 @@ class DebatesController < ApplicationController
   end
 
   def show
-    @debate.increment!(:views) unless current_user == @debate.user
+    unless current_user == @debate.user
+      @debate.increment!(:views)
+    end
   end
 
   def new

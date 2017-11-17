@@ -10,7 +10,7 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-lg-2">
+      <div class="col-lg-2 text-center">
         <% if @article.user.avatar.blank? %>
           <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
         <% else %>
@@ -30,7 +30,7 @@
       <div class="col-lg-10">
         <h1><%= @article.title %></h1>
         <hr>
-        <%= @article.content %>
+        <%= raw @article.content %>
       </div>
     </div>
   </div>
