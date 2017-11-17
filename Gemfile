@@ -1,3 +1,4 @@
+gem 'acts_as_votable', '~> 0.11.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -29,6 +30,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "cocoon"
 gem 'ckeditor'
+gem 'acts_as_votable', '~> 0.11.1'
 
 # group :authentication
   gem 'devise'

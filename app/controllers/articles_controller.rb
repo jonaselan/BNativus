@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :set_languages, only: [:new, :edit, :create]
   before_action :set_categories, only: [:new, :edit, :create]
   before_action :authenticate_user!
@@ -43,6 +43,16 @@ class ArticlesController < ApplicationController
     authorize! :destroy, @article
     @article.destroy
     redirect_to user_path(current_user), notice: t('.notice')
+  end
+
+  def upvote
+    @article.upvote_from current_user
+    redirect_to @article
+  end
+
+  def downvote
+    @article.downvote_from current_user
+    redirect_to @article
   end
 
   private

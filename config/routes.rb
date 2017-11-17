@@ -22,8 +22,19 @@ Rails.application.routes.draw do
       end
     end
     resources :rooms, except: [:show]
-    resources :debates
-    resources :articles
+
+    resources :debates do
+      member do
+        put 'upvote' => 'debates#upvote'
+        put 'downvote' => 'debates#downvote'
+      end
+    end
+    resources :articles do
+      member do
+        put 'upvote' => 'articles#upvote'
+        put 'downvote' => 'articles#downvote'
+      end
+    end
 
     get '*path', to: "errors#not_found"
   end

@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   enum gender: [:M, :F]
 
+  acts_as_voter
+
   def self.from_omniauth(data)
     where(email: data['email']).first_or_create do |user|
       user.username = data.name.parameterize.underscore

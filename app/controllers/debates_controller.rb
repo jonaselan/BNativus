@@ -1,5 +1,5 @@
 class DebatesController < ApplicationController
-  before_action :set_debate, only: [:show, :edit, :update, :destroy]
+  before_action :set_debate, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :set_languages, only: [:new, :edit, :create]
   before_action :set_categories, only: [:new, :edit, :create]
   before_action :authenticate_user!
@@ -45,6 +45,16 @@ class DebatesController < ApplicationController
     authorize! :destroy, @debate
     @debate.destroy
     redirect_to user_path(current_user), notice: t('.notice')
+  end
+
+  def upvote
+    @debate.upvote_from current_user
+    redirect_to @debate
+  end
+
+  def downvote
+    @debate.downvote_from current_user
+    redirect_to @debate
   end
 
   private
