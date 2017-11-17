@@ -40,6 +40,10 @@ pt-br:
     logout: 'Sair'
     invalid_infos: 'Email ou senha invalida(s)'
     settings: 'Configurações'
+    ideia: Ideia
+    team: Equipe
+    contact: Contato
+    contribute: Contribuir
   room_form:
     create_room_description: 'É preciso compartilhar o link da sala que você criou, dessa forma, outras pessoas podem entrar. Para tanto, siga os próximos passos'
     step_1: Certifique-se de ter uma conta

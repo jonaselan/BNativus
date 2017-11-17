@@ -40,6 +40,10 @@ es:
     logout: 'Salir'
     invalid_infos: 'Correo electrónico o contraseña invalida (s)'
     settings: 'Configuración'
+    ideia: Ideia
+    team: Equipo
+    contact: Contacto
+    contribute: Contribuir
   room_form:
     create_room_description: 'Es necesario compartir el enlace de la sala que creaste, así que otras personas pueden acceder a ella. Para ello, siga estos pasos'
     step_1: Asegúrese de tener una cuenta

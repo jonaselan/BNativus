@@ -2,7 +2,7 @@
   <div id="footer">
       <div class="container">
           <div class="row">
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <h3> <%= t 'language_text' %> </h3>
                   <ul>
                     <li> <%= link_to_unless_current t('language_en'), locale: 'en' %> </li>
@@ -10,41 +10,24 @@
                     <li> <%= link_to_unless_current t('language_ptbr'), locale: 'pt-br' %> </li>
                   </ul>
               </div>
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <h3> Sobre </h3>
                   <ul>
-                      <li> <a href="#"> A ideia </a> </li>
-                      <li> <a href="#"> Equipe </a> </li>
-                      <li> <a href="#"> Contato </a> </li>
-                      <li> <a href="https://github.com/jonaselan/BNativus" target="_blank"> Contribua </a> </li>
+                      <li> <a href="#"> <%= t '.ideia' %> </a> </li>
+                      <li> <a href="#"> <%= t '.team'  %></a> </li>
+                      <li> <a href="#"> <%= t '.contact' %> </a> </li>
+                      <li> <a href="https://github.com/jonaselan/BNativus" target="_blank"> <%= t '.contribute' %> </a> </li>
                   </ul>
               </div>
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <h3> Navegar </h3>
                   <ul>
-                      <li>
-                        <%= link_to t('rooms_text'), rooms_path, class: 'nav-link' %>
-                      </li>
                       <li> <a href="https://goo.gl/forms/0rvlpwcR8SVcbj3m1" target="_blank"><%= t('suggestions') %></a></li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
+                      <li> <%= link_to t('rooms_text'), rooms_path, class: 'nav-link' %> </li>
+                      <li> <%= link_to 'Debates', debates_path, class: 'nav-link' %> </li>
+                      <li> <%= link_to t('articles_text'), articles_path, class: 'nav-link' %> </li>
                   </ul>
               </div>
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                  <h3> Lorem Ipsum </h3>
-                  <ul>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                      <li> <a href="#"> Lorem Ipsum </a> </li>
-                  </ul>
-              </div>
-              <!-- <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                  <h3> Redes sociais </h3>
-                  <ul class="social">
-
-                  </ul>
-              </div> -->
           </div>
           <div class="row">
             <div class="col-lg-6">
