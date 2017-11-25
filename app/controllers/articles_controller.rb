@@ -5,12 +5,12 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @articles = Article.all
+    @articles = Article.includes_for_postings.desc_with_limit
   end
 
   def show
     @article.increment!(:views) unless current_user == @article.user
-    @comment = Comment.new(posting: @article, user: current_user)
+    @comment = Comment.new
   end
 
   def new

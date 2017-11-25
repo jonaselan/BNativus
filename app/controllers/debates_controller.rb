@@ -5,7 +5,7 @@ class DebatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @debates = Debate.all
+    @debates = Debate.includes_for_postings.desc_with_limit
   end
 
   def show
