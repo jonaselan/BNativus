@@ -62,9 +62,13 @@
           <div class="form-group">
             <%= form.text_area :content, class: 'form-control', rows: 4 %>
           </div>
-
-          <div class="actions">
-            <%= form.submit 'publish', class: 'btn btn-success' %>
+          <div class="row">
+            <div class="col-lg-6">
+              <%= form.text_field :posting_id, value: @article.id, class: 'invisible' %>
+            </div>
+            <div class="col-lg-6">
+              <%= form.submit 'publish', class: 'btn btn-success pull-right' %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -76,12 +80,13 @@
           Não há comentarios ainda
         </div>
       <% else %>
-        <%= @article.comments.each do |comment| %>
+        <% @article.comments.each do |comment| %>
           <div class="col-lg-1">
-            <%= comment.user.avatar %>
+            <%= cl_image_tag(comment.user.avatar, class: 'card-img-top') %>
           </div>
           <div class="col-lg-11">
-            <%= comment.user.username %> | <%= t time_ago_in_words comment.created_at %>
+            <%= comment.user.username %> | <%= t time_ago_in_words comment.created_at %><br>
+            <%= comment.content %>
           </div>
         <% end %>
       <% end %>

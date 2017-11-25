@@ -20,8 +20,9 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to article_path(@comment.posting.id), notice: 'Comment was successfully created.'
     else
       render :new
     end
@@ -49,5 +50,9 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+    end
+
+    def comment_params
+      params.require(:comment).permit(:content, :posting_id)
     end
 end
