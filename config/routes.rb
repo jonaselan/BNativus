@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     end
     resources :rooms, except: [:show]
 
+    resources :comments
     resources :debates do
       member do
         put 'upvote' => 'debates#upvote'

@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="row">
-          <%= render partial: "shared/posting_card", collection: @debates, as: :posting %>
+          <%= render partial: "shared/posting/posting_card", collection: @debates, as: :posting %>
         </div>
         <%= link_to t('.more_debates'), debates_path %>
         <hr>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="row">
-          <%= render partial: "shared/posting_card", collection: @articles, as: :posting %>
+          <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
         </div>
         <%= link_to t('.more_articles'), articles_path %>
       </div>

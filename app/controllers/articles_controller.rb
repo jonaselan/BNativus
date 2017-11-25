@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article.increment!(:views) unless current_user == @article.user
+    @comment = Comment.new(posting: @article, user: current_user)
   end
 
   def new

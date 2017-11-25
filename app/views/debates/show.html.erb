@@ -33,15 +33,15 @@
         <%= raw @debate.content %>
         <br>
         <div class="posting-votes">
-          <%= link_to(upvote_article_path(@article), method: :put) do %>
+          <%= link_to(upvote_debate_path(@debate), method: :put) do %>
             <i class="fa fa-thumbs-up" aria-hidden="true"></i>
           <% end %>
-          <%= @article.get_upvotes.size%>
+          <%= @debate.get_upvotes.size%>
 
-          <%= link_to(downvote_article_path(@article), method: :put) do %>
+          <%= link_to(downvote_debate_path(@debate), method: :put) do %>
             <i class="fa fa-thumbs-down" aria-hidden="true"></i>
           <% end %>
-          <%= @article.get_downvotes.size%>
+          <%= @debate.get_downvotes.size%>
         </div>
       </div>
     </div>
