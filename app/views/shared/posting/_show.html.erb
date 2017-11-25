@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="container-default">
+    <div class="row">
+      <div class="col-lg-6">
+        <i class="fa fa-eye" aria-hidden="true"></i> <%= posting.views %>
+      </div>
+      <div class="col-lg-6">
+        <i class="fa fa-tag" aria-hidden="true"></i> <%= posting.category.title %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-2 text-center">
+        <% if posting.user.avatar.blank? %>
+          <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
+        <% else %>
+          <%= cl_image_tag(posting.user.avatar, class: 'card-img-top') %>
+        <% end %>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= posting.user.username %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <%= t posting.language.name %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10">
+        <h1><%= posting.title %></h1>
+        <hr>
+        <%= raw posting.content %>
+        <br>
+        <div class="posting-votes">
+          <% upvote_link = posting.type == "Debate" ? upvote_debate_path(posting) : upvote_article_path(posting) %>
+          <%= link_to(upvote_link, method: :put) do %>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <% end %>
+          <%= posting.get_upvotes.size%>
+
+          <% downvote_link = posting.type == "Debate" ? upvote_debate_path(posting) : downvote_article_path(posting) %>
+          <%= link_to(downvote_link, method: :put) do %>
+            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+          <% end %>
+          <%= posting.get_downvotes.size%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="container-default">
+    <div id="disqus_thread"></div>
+  </div>
+</div>
+
+<script>
+var disqus_config = function () {
+  this.page.shortname = 'bnativus';
+  this.page.identifier = '<%= posting.id%>';
+  this.page.title = '<%= posting.title %>';
+  this.page.url = '<%= request.original_url %>';
+  this.language = "<%= I18n.locale %>";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://bnativus.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
