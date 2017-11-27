@@ -44,6 +44,7 @@ gem 'cloudinary'
 group :test do
   gem 'database_cleaner'
   gem 'shoulda'
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
