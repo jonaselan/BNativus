@@ -12,6 +12,9 @@
 @import 'abstract/shape';
 
 // VIEWS
+// home
+@import "views/home/index";
+
 // main
 @import "views/main/main";
 @import "views/main/authentication";

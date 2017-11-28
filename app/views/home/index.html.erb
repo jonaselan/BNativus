@@ -1,3 +1,116 @@
-<div class="container">
-  welcome
+<div id="welcome">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <%= image_tag("world.jpg", class: 'card-img-top') %>
+      </div>
+      <div class="col-lg-4 text-center margin-auto">
+        <h2> BNativus </h2>
+        <span class="introduction-text align-middle">Pratique uma nova lingua estrangeira com pessoas ao redor do mundo, totalmente de graça</span>
+        <br>
+        <%= link_to t('application.signup'), new_user_registration_path, class: 'btn' %>
+        <%= link_to t('application.loginin'), new_user_session_path, class: 'btn' %>
+      </div>
+    </div>
+  </div>
+  <!-- introduction -->
+  <section class="row info">
+    <div class="container">
+      <p class="font-medium">Quem está estudando uma nova lingua estrangeira sabe que não há outro jeito de aprender, tem que praticar. Se você se enquadra a esse perfil, e ainda não quer gastar nada para isso, comece agora a usar o BNativus!</p>
+    </div>
+  </section>
+  <!-- how it work -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h2>Veja como é simples</h2>
+          <hr class="small">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-users fa-stack-1x icon" aria-hidden="true"></i>
+                </span>
+                <h4> <strong>Construa seu perfil</strong> </h4>
+                <p>Crie seu perfil e informe as linguas que domina, e claro a que deseja aprender </p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-comments fa-stack-1x icon"></i>
+                </span>
+                <h4> <strong>Crie salas de conversa</strong> </h4>
+                <p>Se deseja praticar a conversasão, monte salas (com audio e video) e as compartilhe, ou...</p>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <div class="service-item">
+                <span class="fa-stack fa-4x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-pencil fa-stack-1x icon"></i>
+                </span>
+                <h4> <strong>Escreva com comunidade</strong> </h4>
+                <p>Se procura praticar a escrita/leitura, escreva artigos ou levante debates com a comunidade </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- donate -->
+  <section class="info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Ajude a manter o BNativus</h2>
+          <p class="font-medium">O Bnativus é um sistema sem fins lucrativos,
+            criado unicamente para auxiliar a comunidade a evoluir seus estudos
+            em uma nova lingua. Se você gostou da prataforma, por favor, faça
+            uma doação para a manter ativa! </p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="D9J28TERR62U8">
+              <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- more infos -->
+  <section class="row">
+    <div class="col-lg-6 no-padding-right">
+      <%= image_tag("passport.jpeg", class: 'card-img-top') %>
+    </div>
+    <div class="col-lg-6 margin-auto text-center">
+      <h2> Vá longe </h2>
+      <p>Matenha uma rotina de estudo, e logo você se tornará fluente. Isso
+      possibilita você a fazer aquela viagem tão sonhada ou conseguir aquela
+      vaga de trabalho no exterior, e não se preocupar com a comunicação.</p>
+    </div>
+    <div class="col-lg-6 margin-auto text-center">
+      <h2> Diminua distância </h2>
+      <p>Aqui você conhece pessoas de diversos locais do mundo, explorando novas
+        culturas, costumes e locais, sem sair do lugar. Tudo isso enquanto estuda. </p>
+    </div>
+    <div class="col-lg-6 no-padding-left">
+      <%= image_tag("people.jpg", class: 'card-img-top') %>
+    </div>
+  </section>
+  <!-- Evaluate -->
+  <section class="info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h3> Atualmente o BNativus está em sua versão beta, logo é importante escutar nossos usuários, para sempre procurar melhorar </h3>
+          <a target="_blank" href="https://goo.gl/forms/kIW3XhoMxV7e5TeS2" class="btn">Avalie!</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

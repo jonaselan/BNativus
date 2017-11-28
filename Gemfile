@@ -1,4 +1,3 @@
-gem 'acts_as_votable', '~> 0.11.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
