@@ -16,7 +16,9 @@
         <div class="row">
           <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
         </div>
-        <%= link_to t('.more_rooms'), rooms_path %>
+        <div class="more-models">
+          <%= link_to t('.more_rooms'), rooms_path %>
+        </div>
       </div>
     </div>
   </div>

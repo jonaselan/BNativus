@@ -1,15 +1,6 @@
 <div class="container">
   <div class="container-default">
     <div class="row">
-      <div class="col-lg-6">
-        <i class="fa fa-eye" aria-hidden="true"></i> <%= posting.views %>
-      </div>
-      <div class="col-lg-6">
-        <i class="fa fa-tag" aria-hidden="true"></i> <%= posting.category.title %>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
       <div class="col-lg-2 text-center">
         <% if posting.user.avatar.blank? %>
           <%= image_tag("profile-icon.png", class: 'card-img-top')  %>
@@ -28,6 +19,10 @@
         </div>
       </div>
       <div class="col-lg-10">
+        <div class="font-tiny dark-grey">
+          <i class="fa fa-eye" aria-hidden="true"></i> <%= posting.views %> |
+          <i class="fa fa-tag" aria-hidden="true"></i> <%= posting.category.title %>
+        </div>
         <h1><%= posting.title %></h1>
         <hr>
         <%= raw posting.content %>

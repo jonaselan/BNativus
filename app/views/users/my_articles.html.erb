@@ -16,7 +16,9 @@
         <div class="row">
           <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
         </div>
-        <%= link_to t('.more_articles'), articles_path %>
+        <div class="more-models">
+          <%= link_to t('.more_articles'), articles_path %>
+        </div>
       </div>
     </div>
   </div>

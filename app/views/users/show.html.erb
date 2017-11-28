@@ -17,7 +17,9 @@
         <div class="row">
           <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
         </div>
-        <%= link_to t('.more_rooms'), rooms_path %>
+        <div class="more-models">
+          <%= link_to t('.more_rooms'), rooms_path %>
+        </div>
         <hr>
         <div class="row">
           <!-- Debates -->
@@ -31,7 +33,9 @@
         <div class="row">
           <%= render partial: "shared/posting/posting_card", collection: @debates, as: :posting %>
         </div>
-        <%= link_to t('.more_debates'), debates_path %>
+        <div class="more-models">
+          <%= link_to t('.more_debates'), debates_path %>
+        </div>
         <hr>
         <div class="row">
           <!-- Article -->
@@ -45,7 +49,9 @@
         <div class="row">
           <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
         </div>
-        <%= link_to t('.more_articles'), articles_path %>
+        <div class="more-models">
+          <%= link_to t('.more_articles'), articles_path %>
+        </div>
       </div>
     </div>
   </div>
