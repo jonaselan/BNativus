@@ -32,6 +32,11 @@ pt-br:
   articles_text: Artigos
   suggestions: Sugestões?
   create_room: Criar nova sala
+  more_rooms: 'Mais salas'
+  create_debates: 'Criar debate'
+  more_debates: 'Mais debates'
+  create_article: 'Criar artigo'
+  more_articles: 'Mais artigos'
   application:
     hello: 'Olá'
     signup: 'Criar conta'
@@ -55,7 +60,6 @@ pt-br:
     what_is_it: O que é isso?
   users:
     show:
-      more_rooms: 'Mais salas'
       recents_rooms: 'Últimas salas'
     update:
       notice: "Usuário atualizado com sucesso"

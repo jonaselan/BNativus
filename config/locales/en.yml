@@ -37,7 +37,7 @@ en:
     logout: 'Log Out'
     invalid_infos: 'Email or password is invalid'
   room_form:
-    description: "You need to share the room link you've created, so others can access it. To do so, follow these steps"
+    create_room_description: "You need to share the room link you've created, so others can access it. To do so, follow these steps"
     step_1: 'Be sure to have account'
     step_2: Go to
     step_3: Create a room and copy the link, this way
@@ -46,8 +46,6 @@ en:
     copy: Copy
     what_is_it: What is it?
   users:
-    show:
-      more_rooms: 'More rooms'
     update:
       notice: User was sucessfully updated
   rooms:

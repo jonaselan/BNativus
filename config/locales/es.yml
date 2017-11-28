@@ -31,7 +31,12 @@ es:
   rooms_text: Salas
   articles_text: Artículos
   suggestions: sugerencia
-  create_room: crear nueva sala
+  create_room: Crear nueva sala
+  more_rooms: 'Más salas'
+  create_debate: 'Crear debate'
+  more_debates: 'Más debates'
+  create_article: 'Crear artículo'
+  more_articles: 'Más artículos'
   application:
     hello: 'Hola'
     signup: 'Regístrate'
@@ -55,7 +60,6 @@ es:
     what_is_it: ¿Que es eso?
   users:
     show:
-      more_rooms: 'Más salas'
       recents_rooms: 'salas recientes'
     update:
       notice: "Usuario actualizado con éxito"
