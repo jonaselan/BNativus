@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, counter_cache: :created_rooms
   belongs_to :language
 
   validates :link, :level, presence: true

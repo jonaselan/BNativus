@@ -21,7 +21,6 @@ class RoomsController < ApplicationController
     @room.ip = request.remote_ip
 
     if @room.save
-      current_user.increment!(:created_rooms)
       redirect_to user_path(current_user), notice: t('.notice')
     else
       render :new
