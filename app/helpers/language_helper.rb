@@ -19,8 +19,8 @@ module LanguageHelper
   end
 
   def string_levels
-    ['begginer', 'upper_begginer', 'intermediate',
-      'upper_intermediate', 'advanced', 'upper_advanced',
-      'native']
+    %w[begginer upper_begginer intermediate
+       upper_intermediate advanced upper_advanced
+       native]
   end
 end

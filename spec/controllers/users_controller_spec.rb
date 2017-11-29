@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :controller do
   describe "GET #show" do
     login_user
     it "returns a success response" do
-      get :show, params: {id: current_user, locale: I18n.locale}
+      get :show, params: { id: current_user, locale: I18n.locale }
       expect(response).to be_success
     end
   end
@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :controller do
   describe "GET #edit" do
     login_user
     it "returns a success response" do
-      get :edit, params: {id: current_user, locale: I18n.locale}
+      get :edit, params: { id: current_user, locale: I18n.locale }
       expect(response).to be_success
     end
   end
@@ -24,18 +24,18 @@ RSpec.describe UsersController, type: :controller do
   describe "PUT #update" do
     login_user
     context "with valid params" do
-      let(:new_attributes) {
-        {username: "sim"}
-      }
+      let(:new_attributes) do
+        { username: "sim" }
+      end
 
       it "updates the requested user" do
-        put :update, params: {id: current_user, user: new_attributes, locale: I18n.locale}
+        put :update, params: { id: current_user, user: new_attributes, locale: I18n.locale }
         current_user.reload
         expect(current_user.username).to eq('sim')
       end
 
       it "redirects to the user" do
-        put :update, params: {id: current_user, user: new_attributes, locale: I18n.locale}
+        put :update, params: { id: current_user, user: new_attributes, locale: I18n.locale }
         current_user.reload
         expect(response).to redirect_to(current_user)
       end
@@ -43,7 +43,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "with invalid params" do
       it "returns a success response" do
-        put :update, params: {id: current_user, user: invalid_attributes, locale: I18n.locale}
+        put :update, params: { id: current_user, user: invalid_attributes, locale: I18n.locale }
         expect(response).to be_success
       end
     end

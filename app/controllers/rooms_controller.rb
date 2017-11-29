@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:edit, :update, :destroy]
-  before_action :set_languages, only: [:new, :edit, :create]
+  before_action :set_room, only: %i[edit update destroy]
+  before_action :set_languages, only: %i[new edit create]
   before_action :authenticate_user!
 
   def index
@@ -43,13 +43,14 @@ class RoomsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_room
-      @room = Room.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def room_params
-      params.require(:room).permit(:link, :level, :language_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_room
+    @room = Room.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def room_params
+    params.require(:room).permit(:link, :level, :language_id)
+  end
 end

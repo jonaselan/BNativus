@@ -35,16 +35,16 @@ RSpec.describe DebatesController, type: :controller do
     login_user
     context "with valid params" do
       it "creates a new Debate" do
-        expect {
-          post :create, params: {debate: valid_attributes, locale: I18n.locale }
-        }.to change(Debate, :count).by(1)
+        expect do
+          post :create, params: { debate: valid_attributes, locale: I18n.locale }
+        end.to change(Debate, :count).by(1)
       end
       it "creates a new Debate with user related" do
-        post :create, params: {debate: valid_attributes, locale: I18n.locale }
+        post :create, params: { debate: valid_attributes, locale: I18n.locale }
         expect(Debate.last.user).to eq current_user
       end
       it "increment a debates number of current user" do
-        post :create, params: {debate: valid_attributes, locale: I18n.locale }
+        post :create, params: { debate: valid_attributes, locale: I18n.locale }
         expect(current_user.created_debates).to eq 1
       end
     end

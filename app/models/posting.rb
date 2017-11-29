@@ -4,8 +4,8 @@ class Posting < ApplicationRecord
   belongs_to :category
   has_many :comments
 
-  validates_presence_of :title
-  validates_presence_of :content
+  validates :title, presence: true
+  validates :content, presence: true
 
   acts_as_votable
 

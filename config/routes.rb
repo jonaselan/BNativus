@@ -7,12 +7,12 @@ Rails.application.routes.draw do
     root to: "home#index"
 
     # authentication
-    devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+    devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
                        skip: :omniauth_callbacks,
                        controllers: { registrations: 'registrations' }
 
     # TODO: nested routes
-    resources :users, only: [:show, :edit, :update] do
+    resources :users, only: %i[show edit update] do
       collection do
         get 'my_rooms' => 'users#my_rooms'
         get 'my_debates' => 'users#my_debates'

@@ -2,8 +2,8 @@ lang_en = Language.create(name: 'language_en', shortcode: 'en')
 lang_pt = Language.create(name: 'language_ptbr', shortcode: 'pt-br')
 Language.create(name: 'language_es', shortcode: 'es')
 
-uu = User.create(email: 'email@email.com', username: 'user1', password: 123456)
-uu2 = User.create(email: 'email2@email.com', username: 'user2', password: 123456)
+uu = User.create(email: 'email@email.com', username: 'user1', password: 123_456)
+uu2 = User.create(email: 'email2@email.com', username: 'user2', password: 123_456)
 
 UserKnownLanguage.create(user: uu, known_languages: lang_pt, write: 3, speak: 5)
 UserKnownLanguage.create(user: uu2, known_languages: lang_en, write: 3, speak: 5)

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  before_action :set_languages, only: [:new, :edit, :create]
-  before_action :set_categories, only: [:new, :edit, :create]
+  before_action :set_article, only: %i[show edit update destroy upvote downvote]
+  before_action :set_languages, only: %i[new edit create]
+  before_action :set_categories, only: %i[new edit create]
   before_action :authenticate_user!
 
   def index
@@ -57,13 +57,14 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:title, :content, :language_id, :category_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:title, :content, :language_id, :category_id)
+  end
 end

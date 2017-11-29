@@ -12,18 +12,18 @@ class User < ApplicationRecord
   has_many :user_languages_studieds, dependent: :destroy
   has_many :languages_studied, through: :user_languages_studieds, class_name: 'Language', foreign_key: 'languages_studied_id'
   has_many :rooms, dependent: :destroy
-  has_many :debates
-  has_many :articles
-  has_many :comments
-  has_many :postings
+  has_many :debates, dependent: :destroy
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :postings, dependent: :destroy
 
-  validates_presence_of :username
-  validates_uniqueness_of :username, :email
+  validates :username, presence: true
+  validates :username, :email, uniqueness: true
 
   accepts_nested_attributes_for :user_known_languages, allow_destroy: true
   accepts_nested_attributes_for :user_languages_studieds, allow_destroy: true
 
-  enum gender: [:M, :F]
+  enum gender: %i[M F]
 
   acts_as_voter
 
@@ -33,7 +33,7 @@ class User < ApplicationRecord
       user.first_name = data.first_name
       user.last_name = data.last_name
       user.email = data.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
       user.avatar = data.image
     end
   end

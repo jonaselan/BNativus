@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :postings
+  has_many :postings, dependent: :destroy
 
-  validates_presence_of :title
+  validates :title, presence: true
 end

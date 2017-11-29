@@ -4,7 +4,7 @@ class Room < ApplicationRecord
 
   validates :link, :level, presence: true
 
-  validates_uniqueness_of :link
+  validates :link, uniqueness: true
 
-  scope :includes_for_room, -> {includes(:language, :user)}
+  scope :includes_for_room, -> { includes(:language, :user) }
 end

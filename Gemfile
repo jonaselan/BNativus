@@ -31,6 +31,7 @@ gem "cocoon"
 gem 'ckeditor'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'reek'
+gem 'rubocop', '~> 0.51.0', require: false
 
 # group :authentication
   gem 'devise'

@@ -1,7 +1,7 @@
 class DebatesController < ApplicationController
-  before_action :set_debate, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  before_action :set_languages, only: [:new, :edit, :create]
-  before_action :set_categories, only: [:new, :edit, :create]
+  before_action :set_debate, only: %i[show edit update destroy upvote downvote]
+  before_action :set_languages, only: %i[new edit create]
+  before_action :set_categories, only: %i[new edit create]
   before_action :authenticate_user!
 
   def index
@@ -9,9 +9,7 @@ class DebatesController < ApplicationController
   end
 
   def show
-    unless current_user == @debate.user
-      @debate.increment!(:views)
-    end
+    @debate.increment!(:views) unless current_user == @debate.user
   end
 
   def new
@@ -58,13 +56,14 @@ class DebatesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_debate
-      @debate = Debate.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def debate_params
-      params.require(:debate).permit(:title, :content, :language_id, :category_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_debate
+    @debate = Debate.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def debate_params
+    params.require(:debate).permit(:title, :content, :language_id, :category_id)
+  end
 end

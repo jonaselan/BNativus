@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   # GET /comments
   # GET /comments.json
@@ -9,12 +9,10 @@ class CommentsController < ApplicationController
 
   # GET /comments/1
   # GET /comments/1.json
-  def show
-  end
+  def show; end
 
   # GET /comments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /comments
   # POST /comments.json
@@ -47,12 +45,13 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    def comment_params
-      params.require(:comment).permit(:content, :posting_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content, :posting_id)
+  end
 end

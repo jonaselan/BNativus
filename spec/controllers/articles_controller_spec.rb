@@ -35,16 +35,16 @@ RSpec.describe ArticlesController, type: :controller do
     login_user
     context "with valid params" do
       it "creates a new article" do
-        expect {
-          post :create, params: {article: valid_attributes, locale: I18n.locale }
-        }.to change(Article, :count).by(1)
+        expect do
+          post :create, params: { article: valid_attributes, locale: I18n.locale }
+        end.to change(Article, :count).by(1)
       end
       it "creates a new article with user related" do
-        post :create, params: {article: valid_attributes, locale: I18n.locale }
+        post :create, params: { article: valid_attributes, locale: I18n.locale }
         expect(Article.last.user).to eq current_user
       end
       it "increment a articles number of current user" do
-        post :create, params: {article: valid_attributes, locale: I18n.locale }
+        post :create, params: { article: valid_attributes, locale: I18n.locale }
         expect(current_user.created_articles).to eq 1
       end
     end
