@@ -28,12 +28,12 @@ module Bnativus
     # -- all .rb files in that directory are automatically loaded.
 
     # Don't generate system test files.
-    config.generators do |g|
-      g.system_tests = nil
-      g.view_specs false
-      g.helper_specs false
-      g.routing_specs false
-      g.request_specs false
+    config.generators do |generator|
+      generator.system_tests = nil
+      generator.view_specs false
+      generator.helper_specs false
+      generator.routing_specs false
+      generator.request_specs false
     end
   end
 end

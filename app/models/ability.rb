@@ -6,8 +6,8 @@ class Ability
     # if user.admin?
     #   can :manage, :all
     # else
-    can [:show, :destroy, :edit], User do |u|
-      u == user
+    can [:show, :destroy, :edit], User do |uu|
+      uu == user
     end
 
     can [:edit, :update, :destroy], Room do |room|

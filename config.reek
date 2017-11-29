@@ -1,0 +1,28 @@
+UncommunicativeMethodName:
+  accept:
+    - google_oauth2
+IrresponsibleModule:
+  enabled: false
+DuplicateMethodCall:
+  max_calls: 2
+TooManyStatements:
+  enabled: false
+"app/controllers":
+  NestedIterators:
+    max_allowed_nesting: 2
+  UnusedPrivateMethod:
+    enabled: false
+  InstanceVariableAssumption:
+    enabled: false
+"app/helpers":
+  UtilityFunction:
+    enabled: false
+"app/mailers":
+  InstanceVariableAssumption:
+    enabled: false
+
+### Excluding directories
+
+# Directories below will not be scanned at all
+exclude_paths:
+  - db/migrate

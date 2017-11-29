@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :set_languages, only: [:more_informations, :edit, :update]
-  before_action :adapt_params_to_int, only: [:update, :create]
+  before_action :sanitize_page_params, only: [:update, :create]
   before_action :authenticate_user!
 
   def show
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
       img['url']
     end
 
-    def adapt_params_to_int
+    def sanitize_page_params
       params[:user][:gender] = params[:user][:gender].to_i
     end
 

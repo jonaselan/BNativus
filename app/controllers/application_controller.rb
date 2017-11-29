@@ -18,12 +18,12 @@ class ApplicationController < ActionController::Base
 
   def set_languages
     @languages = Language.pluck(:name, :id)
-    @languages.each { |l| l[0] = t(l[0]) }
+    @languages.each { |lang| lang[0] = t(lang[0]) }
   end
 
   def set_categories
     @categories = Category.pluck(:title, :id)
-    @categories.each { |l| l[0] = t(l[0]) }
+    @categories.each { |lang| lang[0] = t(lang[0]) }
   end
 
   private
@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options = {})
-    {locale: I18n.locale}
+    { locale: I18n.locale }
   end
 
 end

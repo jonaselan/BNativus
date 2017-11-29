@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem "cocoon"
 gem 'ckeditor'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'reek'
 
 # group :authentication
   gem 'devise'
