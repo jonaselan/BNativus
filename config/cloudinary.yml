@@ -1,18 +1,14 @@
-development:
-  cloud_name: daomm7dbp
-  api_key: '715586817174786'
-  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
+default: &default
+  cloud_name: <%= ENV['CLOUD_NAME_CLOUDINARY'] %>
+  api_key: <%= ENV['API_KEY_CLOUDINARY'] %>
+  api_secret: <%= ENV['API_SECRET_CLOUDINARY'] %>
   enhance_image_tag: true
+development:
+  <<: *default
   static_image_support: false
 production:
-  cloud_name: daomm7dbp
-  api_key: '715586817174786'
-  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
-  enhance_image_tag: true
+  <<: *default
   static_image_support: true
 test:
-  cloud_name: daomm7dbp
-  api_key: '715586817174786'
-  api_secret: qPgMTP-WL_rN8c7KPtE037s0TuQ
-  enhance_image_tag: true
+  <<: *default
   static_image_support: false
