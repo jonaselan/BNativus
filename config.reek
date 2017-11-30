@@ -25,4 +25,4 @@ TooManyStatements:
 
 # Directories below will not be scanned at all
 exclude_paths:
-  - db/migrate
+  - db/migrate/
