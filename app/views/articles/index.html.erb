@@ -2,14 +2,18 @@
   <div class="container-default">
     <div class="row">
       <div class="col-lg-8">
-        <h1>Article</h1>
+        <h1><%= t 'articles_text' %></h1>
       </div>
       <div class="col-lg-4">
         <%= link_to t('create_article'), new_article_url, class: 'float-right' %>
       </div>
     </div>
-    <div class="row">
-      <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
-    </div>
+    <% unless @debates.empty? %>
+      <div class="row">
+        <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
+      </div>
+    <% else %>
+      <h2 class="text-center mt-4 mb-4"> <%= t 'result_not_found' %> </h2>
+    <% end %>
   </div>
 </div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
         get 'my_article' => 'users#my_articles'
       end
     end
-    resources :rooms, except: [:show]
+    resources :rooms, except: %i[show]
 
     # resources :comments
     resources :debates do

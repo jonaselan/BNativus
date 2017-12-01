@@ -24,6 +24,17 @@ body {
   }
 }
 
+.btn-bnativus {
+  background-color: white;
+  color: black;
+  border: 1px solid $green;
+  cursor: pointer;
+  &:hover{
+    background-color: $green;
+    color: white;
+  }
+}
+
 .turbolinks-progress-bar {
   height: 5px;
   background-color: $light-blue;

@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_languages
-    @languages = Language.pluck(:name, :id)
+    @languages ||= Language.pluck(:name, :id)
     @languages.each { |lang| lang[0] = t(lang[0]) }
   end
 

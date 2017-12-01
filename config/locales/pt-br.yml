@@ -37,6 +37,7 @@ pt-br:
   more_debates: 'Mais debates'
   create_article: 'Criar artigo'
   more_articles: 'Mais artigos'
+  result_not_found: Nenhum resultado foi encontrado
   application:
     hello: 'Olá'
     signup: 'Criar conta'

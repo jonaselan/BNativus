@@ -37,6 +37,7 @@ es:
   more_debates: 'Más debates'
   create_article: 'Crear artículo'
   more_articles: 'Más artículos'
+  result_not_found: No se ha encontrado ningún resultado
   application:
     hello: 'Hola'
     signup: 'Regístrate'

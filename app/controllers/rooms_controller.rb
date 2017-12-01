@@ -1,10 +1,12 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: %i[edit update destroy]
-  before_action :set_languages, only: %i[new edit create]
+  before_action :set_languages, only: %i[new edit create index]
   before_action :authenticate_user!
 
   def index
     @rooms = Room.includes(:language, :user).all
+    @rooms = @rooms.where('language_id = ?', params[:language]) unless params[:language].blank?
+    @rooms = @rooms.where('level = ?', params[:level]) unless params[:level].blank?
   end
 
   def new

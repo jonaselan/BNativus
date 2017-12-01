@@ -16,7 +16,7 @@
   <div class="form-group">
     <%= f.label :level %><br />
     <%= f.select(:level, [], {}, { :class => 'custom-select' }) do %>
-      <% select_levels('number').each do |level| -%>
+      <% numbers_levels.each do |level| -%>
         <%= content_tag(:option, level[0], value: level[1]) %>
       <% end %>
     <% end %>

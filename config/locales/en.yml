@@ -29,6 +29,7 @@ en:
   articles_text: Articles
   suggestions: Suggestions?
   create_room: Create new room
+  result_not_found: No results were found
   application:
     hello: 'Hello'
     signup: 'Sign Up'

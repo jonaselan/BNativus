@@ -2,14 +2,33 @@
   <div class="container-default">
     <div class="row">
       <div class="col-lg-8">
-        <h1>Rooms</h1>
+        <h1><%= t 'rooms_text' %></h1>
       </div>
       <div class="col-lg-4">
         <%= link_to t('create_room'), new_room_url, class: 'float-right' %>
       </div>
     </div>
-    <div class="row">
-      <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
-    </div>
+    <%= form_tag rooms_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+      <div class="row">
+        <div class="col-lg-auto">
+          <%= label_tag Room.human_attribute_name(:language) %><br />
+          <%= select_tag("language", options_for_select(@languages, params[:language]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto">
+          <%= label_tag Room.human_attribute_name(:level) %><br />
+          <%= select_tag("level", options_for_select(string_levels, params[:level]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto mt-4">
+          <%= submit_tag 'filter', class: 'btn btn-bnativus' %>
+        </div>
+      </div>
+    <% end %>
+    <% unless @rooms.empty? %>
+      <div class="row">
+        <%= render partial: "shared/room_card", collection: @rooms, as: :room %>
+      </div>
+    <% else %>
+      <h2 class="text-center mt-4 mb-4"> <%= t 'result_not_found' %> </h2>
+    <% end %>
   </div>
 </div>

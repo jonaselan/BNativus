@@ -12,7 +12,7 @@
       <%= form.label Room.human_attribute_name(:level) %>
       <br>
       <%= form.select(:level, [], {}, { :class => 'custom-select' }) do %>
-        <%= options_for_select(select_levels('string')) %>
+        <%= options_for_select(string_levels) %>
       <% end %>
     </div>
 

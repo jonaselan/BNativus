@@ -8,8 +8,12 @@
         <%= link_to t('create_debate'), new_debate_url, class: 'float-right' %>
       </div>
     </div>
-    <div class="row">
-      <%= render partial: "shared/posting/posting_card", collection: @debates, as: :posting %>
-    </div>
+    <% unless @debates.empty? %>
+      <div class="row">
+        <%= render partial: "shared/posting/posting_card", collection: @debates, as: :posting %>
+      </div>
+    <% else %>
+      <h2 class="text-center mt-4 mb-4"> <%= t 'result_not_found' %> </h2>
+    <% end %>
   </div>
 </div>
