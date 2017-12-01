@@ -8,7 +8,7 @@
         <%= link_to t('create_room'), new_room_url, class: 'float-right' %>
       </div>
     </div>
-    <%= form_tag rooms_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+    <%= form_tag rooms_path, method: :get do %>
       <div class="row">
         <div class="col-lg-auto">
           <%= label_tag Room.human_attribute_name(:language) %><br />

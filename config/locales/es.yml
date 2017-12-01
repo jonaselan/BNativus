@@ -19,7 +19,7 @@ es:
   podcast: 'podcast'
   humor: 'humor'
   documentaries: 'documentales'
-  articles: 'artículos'
+  posts: 'artículos'
   animation: 'animación'
   quotes: 'cotizaciones'
   stories: 'historias'
@@ -97,6 +97,9 @@ es:
         level: Nivel
         speak: hablar
         write: escribir
+      debate:
+        category: Categoría
+        language: Lenguaje
       user:
         first_name: 'Nombre'
         last_name: 'Apellido'

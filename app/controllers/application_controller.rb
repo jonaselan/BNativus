@@ -17,12 +17,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_languages
-    @languages ||= Language.pluck(:name, :id)
+    @languages ||= Language.order(created_at: :asc).pluck(:name, :id)
     @languages.each { |lang| lang[0] = t(lang[0]) }
   end
 
   def set_categories
-    @categories = Category.pluck(:title, :id)
+    @categories = Category.order(created_at: :asc).pluck(:title, :id)
     @categories.each { |lang| lang[0] = t(lang[0]) }
   end
 

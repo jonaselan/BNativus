@@ -19,7 +19,7 @@ pt-br:
   podcast: 'podcast'
   humor: 'humor'
   documentaries: 'documentarios'
-  articles: 'artigos'
+  posts: 'artigos'
   animation: 'animações'
   quotes: 'citações'
   stories: 'histórias'
@@ -97,6 +97,9 @@ pt-br:
         level: Nivel
         speak: Fala
         write: Escrita
+      debate:
+        category: Categoria
+        language: Linguagem
       user:
         first_name: 'Primeiro nome'
         last_name: 'Sobrenome'

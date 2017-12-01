@@ -8,6 +8,25 @@
         <%= link_to t('create_debate'), new_debate_url, class: 'float-right' %>
       </div>
     </div>
+    <%= form_tag debates_path, method: :get do %>
+      <div class="row">
+        <div class="col-lg-auto">
+          <%= label_tag Debate.human_attribute_name(:language) %><br />
+          <%= select_tag("language", options_for_select(@languages, params[:language]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto">
+          <%= label_tag Debate.human_attribute_name(:category) %><br />
+          <%= select_tag("category", options_for_select(@categories, params[:category]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto">
+          <%= label_tag 'sort_by' %><br />
+          <%= select_tag("sort_by", options_for_select(['Top', 'New'], params[:sort_by]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto mt-4">
+          <%= submit_tag 'filter', class: 'btn btn-bnativus' %>
+        </div>
+      </div>
+    <% end %>
     <% unless @debates.empty? %>
       <div class="row">
         <%= render partial: "shared/posting/posting_card", collection: @debates, as: :posting %>

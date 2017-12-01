@@ -34,7 +34,7 @@
           <% end %>
           <%= posting.get_upvotes.size%>
 
-          <% downvote_link = posting.type == "Debate" ? upvote_debate_path(posting) : downvote_article_path(posting) %>
+          <% downvote_link = posting.type == "Debate" ? downvote_debate_path(posting) : downvote_article_path(posting) %>
           <%= link_to(downvote_link, method: :put) do %>
             <i class="fa fa-thumbs-down" aria-hidden="true"></i>
           <% end %>

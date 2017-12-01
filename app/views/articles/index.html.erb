@@ -8,7 +8,7 @@
         <%= link_to t('create_article'), new_article_url, class: 'float-right' %>
       </div>
     </div>
-    <% unless @debates.empty? %>
+    <% unless @articles.empty? %>
       <div class="row">
         <%= render partial: "shared/posting/posting_card", collection: @articles, as: :posting %>
       </div>
