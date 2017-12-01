@@ -37,7 +37,7 @@ RSpec.describe UsersController, type: :controller do
       it "redirects to the user" do
         put :update, params: { id: current_user, user: new_attributes, locale: I18n.locale }
         current_user.reload
-        expect(response).to redirect_to(current_user)
+        expect(response).to redirect_to user_path(current_user)
       end
     end
 

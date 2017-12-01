@@ -6,6 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(_resource)
-    more_informations_users_path
+    user_informations_path(resource)
   end
 end

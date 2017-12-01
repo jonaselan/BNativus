@@ -5,21 +5,24 @@ describe OmniauthCallbacksController, type: :controller do
     OmniAuth.config.mock_auth[:google] = nil
     OmniAuth.config.test_mode = true
     request.env["devise.mapping"] = Devise.mappings[:user] # If using Devise
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new("provider" => "google_oauth2",
-                                                                                               "uid" => "100000000000000",
-                                                                                               "info" => {
-                                                                                                 "name" => "John Smith",
-                                                                                                 "email" => "john@example.com",
-                                                                                                 "first_name" => "John",
-                                                                                                 "last_name" => "Smith",
-                                                                                                 "image" => "https://lh4.googleusercontent.com/photo.jpg"
-                                                                                               },
-                                                                                               "credentials" => {
-                                                                                                 "token" => "TOKEN",
-                                                                                                 # "refresh_token" => "REFRESH_TOKEN",
-                                                                                                 "expires_at" => 1_496_120_719,
-                                                                                                 "expires" => true
-                                                                                               })
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google] =
+      OmniAuth::AuthHash.new(
+        "provider" => "google_oauth2",
+         "uid" => "100000000000000",
+         "info" => {
+           "name" => "John Smith",
+           "email" => "john@example.com",
+           "first_name" => "John",
+           "last_name" => "Smith",
+           "image" => "https://lh4.googleusercontent.com/photo.jpg"
+         },
+         "credentials" => {
+           "token" => "TOKEN",
+           # "refresh_token" => "REFRESH_TOKEN",
+           "expires_at" => 1_496_120_719,
+           "expires" => true
+          }
+      )
   end
 
   describe 'GET google_oauth2' do
@@ -45,7 +48,7 @@ describe OmniauthCallbacksController, type: :controller do
 
       it 'redirects to more information page' do
         get :google_oauth2
-        expect(response).to redirect_to(more_informations_users_url)
+        expect(response).to redirect_to(user_informations_path(User.first))
       end
     end
 

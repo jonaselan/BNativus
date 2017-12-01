@@ -4,7 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       sign_in(@user)
       if @user.created_at > 1.minute.ago
-        redirect_to more_informations_users_path
+        redirect_to user_informations_path(@user)
       else
         redirect_to @user, event: :authentication
       end

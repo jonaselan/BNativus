@@ -11,14 +11,14 @@ Rails.application.routes.draw do
                        skip: :omniauth_callbacks,
                        controllers: { registrations: 'registrations' }
 
-    # TODO: nested routes
     resources :users, only: %i[show edit update] do
+      scope module: "users" do
+        resources :informations, only: %i[index update]
+      end
       collection do
         get 'my_rooms' => 'users#my_rooms'
         get 'my_debates' => 'users#my_debates'
         get 'my_article' => 'users#my_articles'
-        get 'more_informations' => 'users#more_informations'
-        patch 'add_more_informations' => 'users#add_more_informations'
       end
     end
     resources :rooms, except: [:show]

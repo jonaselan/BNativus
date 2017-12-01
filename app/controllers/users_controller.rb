@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
-  before_action :set_languages, only: %i[more_informations edit update]
+  before_action :set_languages, only: %i[edit update]
   before_action :sanitize_page_params, only: %i[update create]
   before_action :authenticate_user!
 
@@ -21,19 +21,6 @@ class UsersController < ApplicationController
       redirect_to @user, notice: t('.notice')
     else
       render :edit
-    end
-  end
-
-  def more_informations
-    current_user.user_known_languages.build
-    current_user.user_languages_studieds.build
-  end
-
-  def add_more_informations
-    if current_user.update(user_params)
-      redirect_to user_path(current_user.id), notice: t('devise.registrations.signed_up')
-    else
-      render :more_informations
     end
   end
 
