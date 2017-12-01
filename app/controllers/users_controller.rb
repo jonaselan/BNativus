@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    params[:user][:avatar] = upload_avatar if params[:user][:avatar].present?
+    avatar = params[:user][:avatar]
+    params[:user][:avatar] = UploadService.process(avatar) if avatar.present?
     if @user.update(user_params)
       redirect_to @user, notice: t('.notice')
     else
@@ -41,11 +42,6 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
-  end
-
-  def upload_avatar
-    img = Cloudinary::Uploader.upload(params[:user][:avatar])
-    img['url']
   end
 
   def sanitize_page_params

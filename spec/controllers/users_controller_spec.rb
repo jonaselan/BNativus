@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
   let(:current_user) { subject.current_user }
+  let(:room) { create(:room) }
   let(:valid_attributes) { attributes_for(:user) }
   let(:invalid_attributes) { attributes_for(:user, email: '') }
 
+  login_user
   describe "GET #show" do
-    login_user
     it "returns a success response" do
       get :show, params: { id: current_user, locale: I18n.locale }
       expect(response).to be_success
@@ -14,7 +15,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #edit" do
-    login_user
     it "returns a success response" do
       get :edit, params: { id: current_user, locale: I18n.locale }
       expect(response).to be_success
@@ -22,7 +22,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "PUT #update" do
-    login_user
     context "with valid params" do
       let(:new_attributes) do
         { username: "sim" }
