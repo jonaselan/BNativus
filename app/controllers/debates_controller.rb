@@ -8,7 +8,6 @@ class DebatesController < ApplicationController
     @debates = Debate.includes_for_postings.desc_with_limit
     @debates = @debates.where('language_id = ?', params[:language]) unless params[:language].blank?
     @debates = @debates.where('category_id = ?', params[:category]) unless params[:category].blank?
-    @debates = @debates.reorder(cached_votes_up: :desc) if params[:sort_by] == 'Top'
   end
 
   def show
@@ -48,12 +47,12 @@ class DebatesController < ApplicationController
   end
 
   def upvote
-    @debate.upvote_from current_user
+    @debate.liked_by current_user
     redirect_to @debate
   end
 
   def downvote
-    @debate.downvote_from current_user
+    @debate.disliked_by current_user
     redirect_to @debate
   end
 
