@@ -97,7 +97,7 @@ pt-br:
         level: Nivel
         speak: Fala
         write: Escrita
-      debate:
+      posting:
         category: Categoria
         language: Linguagem
       user:

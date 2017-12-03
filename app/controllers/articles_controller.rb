@@ -1,16 +1,14 @@
-class ArticlesController < ApplicationController
+class ArticlesController < PostingController
   before_action :set_article, only: %i[show edit update destroy upvote downvote]
-  before_action :set_languages, only: %i[new edit create]
-  before_action :set_categories, only: %i[new edit create]
-  before_action :authenticate_user!
 
   def index
     @articles = Article.includes_for_postings.desc_with_limit
+    @articles = @articles.where('language_id = ?', params[:language]) unless params[:language].blank?
+    @articles = @articles.where('category_id = ?', params[:category]) unless params[:category].blank?
   end
 
   def show
     @article.increment!(:views) unless current_user == @article.user
-    @comment = Comment.new
   end
 
   def new

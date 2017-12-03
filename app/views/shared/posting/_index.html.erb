@@ -1,0 +1,40 @@
+<% form_link, new_resource, title = if type == "debate" %>
+  <% [debates_path, new_debate_path, 'Debates'] %>
+<% else %>
+  <% [articles_path, new_article_path, t('articles_text')] %>
+<% end %>
+
+<div class="container">
+  <div class="container-default">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1><%= title %></h1>
+      </div>
+      <div class="col-lg-4">
+        <%= link_to t('create_debate'), new_resource, class: 'float-right' %>
+      </div>
+    </div>
+    <%= form_tag form_link, method: :get do %>
+      <div class="row">
+        <div class="col-lg-auto">
+          <%= label_tag Posting.human_attribute_name(:language) %><br />
+          <%= select_tag("language", options_for_select(@languages, params[:language]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto">
+          <%= label_tag Posting.human_attribute_name(:category) %><br />
+          <%= select_tag("category", options_for_select(@categories, params[:category]), class: 'custom-select', include_blank: true) %>
+        </div>
+        <div class="col-lg-auto mt-4">
+          <%= submit_tag 'filter', class: 'btn btn-bnativus' %>
+        </div>
+      </div>
+    <% end %>
+    <% unless postings.empty? %>
+      <div class="row">
+        <%= render partial: "shared/posting/posting_card", collection: postings, as: :posting %>
+      </div>
+    <% else %>
+      <h2 class="text-center mt-4 mb-4"> <%= t 'result_not_found' %> </h2>
+    <% end %>
+  </div>
+</div>

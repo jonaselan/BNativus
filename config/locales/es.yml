@@ -97,7 +97,7 @@ es:
         level: Nivel
         speak: hablar
         write: escribir
-      debate:
+      posting:
         category: Categoría
         language: Lenguaje
       user:

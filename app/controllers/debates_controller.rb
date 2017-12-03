@@ -1,8 +1,5 @@
-class DebatesController < ApplicationController
+class DebatesController < PostingController
   before_action :set_debate, only: %i[show edit update destroy upvote downvote]
-  before_action :set_languages, only: %i[new edit create index]
-  before_action :set_categories, only: %i[new edit create index]
-  before_action :authenticate_user!
 
   def index
     @debates = Debate.includes_for_postings.desc_with_limit
