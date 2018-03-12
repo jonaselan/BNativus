@@ -1,0 +1,21 @@
+# config/database.yml
+
+default: &default
+  adapter: <%= ENV["DB_ADAPTER"] %>
+  host: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  encoding: unicode
+  pool: 5
+  
+development:
+  <<: *default
+  database: bnativus_development
+
+test:
+  <<: *default
+  database: bnativus_test
+
+production:
+  <<: *default
+  database: bnativus_production
