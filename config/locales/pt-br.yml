@@ -50,6 +50,12 @@ pt-br:
     team: Equipe
     contact: Contato
     contribute: Contribuir
+  more_information:
+    almost_there: 'Quase lá'
+    info_about_u: 'Precisamos de mais algumas informações importantes sobre você' 
+    where_u_from: 'De onde você é?'
+    language_study: 'Qual idioma que está estudando?'
+    main_language: 'Qual idioma que você domina?'
   room_form:
     create_room_description: 'É preciso compartilhar o link da sala que você criou, dessa forma, outras pessoas podem entrar. Para tanto, siga os próximos passos'
     step_1: Certifique-se de ter uma conta

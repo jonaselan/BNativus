@@ -1,6 +1,6 @@
 <div class="row nested-fields">
   <div class="col-lg-2">
-    <%= f.label :language %><br>
+    <%= f.label(t('language_text')) %><br>
     <%= f.select(:languages_studied_id, @languages, {}, { class: 'custom-select' }) %>
   </div>
   <%= render 'shared/language_fields', f: f %>

@@ -37,6 +37,12 @@ en:
     loginin: 'Log In'
     logout: 'Log Out'
     invalid_infos: 'Email or password is invalid'
+  more_information:
+    almost_there: 'Almost There'
+    info_about_u: 'We need some more important information about you.'
+    where_u_from: 'Where you from?'
+    language_study: 'What language are you studying?'
+    main_language: 'What language do you speak?'
   room_form:
     create_room_description: "You need to share the room link you've created, so others can access it. To do so, follow these steps"
     step_1: 'Be sure to have account'
