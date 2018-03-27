@@ -1,9 +1,11 @@
 class User < ApplicationRecord
+  include Omniauthenticable
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :omniauthable, omniauth_providers: %i(google_oauth2 facebook)
 
   # mount_uploader :avatar, ImageUserUploader
 
@@ -27,16 +29,16 @@ class User < ApplicationRecord
 
   acts_as_voter
 
-  def self.from_omniauth(data)
-    where(email: data['email']).first_or_create do |user|
-      user.username = data.name.parameterize.underscore
-      user.first_name = data.first_name
-      user.last_name = data.last_name
-      user.email = data.email
-      user.password = Devise.friendly_token[0, 20]
-      user.avatar = data.image
-    end
-  end
+  # def self.from_omniauth(data)
+  #   where(email: data['email']).first_or_create do |user|
+  #     user.username = data.name.parameterize.underscore
+  #     user.first_name = data.first_name
+  #     user.last_name = data.last_name
+  #     user.email = data.email
+  #     user.password = Devise.friendly_token[0, 20]
+  #     user.avatar = data.image
+  #   end
+  # end
 
   def to_param
     "#{id} #{username}".parameterize
