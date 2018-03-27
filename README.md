@@ -78,6 +78,12 @@ If you are using docker, just put all these information in `.env`. Exist a examp
 cp .env.example .env
 ```
 
+## Roadmap
+- [ ] Add translate on French
+- [ ] Bread cramp
+- [ ] Make a vote without reload the page
+- [ ] Open a pull request
+
 ## Contributions
 
 1. Fork the project

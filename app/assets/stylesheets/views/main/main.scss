@@ -10,6 +10,9 @@ body {
     }
   }
   .main-div {
+    background-image: image-url("background.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
     min-height: 400px;
   }
   .container-default {
