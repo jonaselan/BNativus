@@ -30,6 +30,7 @@ en:
   suggestions: Suggestions?
   create_room: Create new room
   result_not_found: No results were found
+  continue: Continue
   application:
     hello: 'Hello'
     signup: 'Sign Up'
