@@ -1,6 +1,14 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_action :omniauth_auth
+  
   def google_oauth2
-    @user = User.from_omniauth(request.env['omniauth.auth'].info)
+  end
+  
+  def facebook
+  end
+
+  def omniauth_auth
+    @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user.persisted?
       sign_in(@user)
       if @user.created_at > 1.minute.ago

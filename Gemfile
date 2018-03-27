@@ -37,6 +37,7 @@ gem 'rubocop', '~> 0.51.0', require: false
   gem 'devise'
   gem 'cancancan', '~> 2.0'
   gem 'omniauth-google-oauth2'
+  gem 'omniauth-facebook'
 # end
 
 gem 'carrierwave'
