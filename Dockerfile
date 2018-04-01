@@ -31,6 +31,8 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 
+EXPOSE 80
+
 # Finally, add the rest of our app's code
 # (this is done at the end so that changes to our app's code
 # don't bust Docker's cache)
