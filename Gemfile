@@ -33,9 +33,9 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'reek'
 gem 'rubocop', '~> 0.51.0', require: false
 
-group :production do
-  gem 'passenger', '~> 5.0', '>= 5.0.30'
-end
+# group :production do
+#   gem 'passenger', '~> 5.0', '>= 5.0.30'
+# end
 
 # group :authentication do
   gem 'devise'
