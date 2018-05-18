@@ -79,10 +79,11 @@ cp .env.example .env
 ```
 
 ## Roadmap
-- [ ] Add translate on French
-- [ ] Bread cramp
+- [ ] Add translation in French
+- [ ] Breadcrumb
 - [ ] Make a vote without reload the page
-- [ ] Open a pull request
+- [ ] Create a user profile
+- [ ] Admin section
 
 ## Contributions
 
