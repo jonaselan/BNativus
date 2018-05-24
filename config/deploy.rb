@@ -1,8 +1,8 @@
 # Change these
-server '206.189.121.245', port: 22, roles: [:web, :app, :db], primary: true
+server '206.189.121.245', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:jonaselan/BNativus.git'
-set :application,     'Bnativus'
+set :application,     'BNativus'
 set :user,            'jonaselan'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
