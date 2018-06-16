@@ -2,7 +2,7 @@ en:
   language_text: 'Language'
   language_ptbr: 'Portuguese'
   language_en: 'English'
-  language_es: 'Espanish'
+  language_es: 'Spanish'
   begginer: 'Begginer'
   upper_begginer: 'Upper Begginer'
   intermediate: 'Intermediate'
@@ -41,7 +41,7 @@ en:
   more_information:
     almost_there: 'Almost There'
     info_about_u: 'We need some more important information about you.'
-    where_u_from: 'Where you from?'
+    where_u_from: 'Where are you from?'
     language_study: 'What language are you studying?'
     main_language: 'What language do you speak?'
   room_form:
